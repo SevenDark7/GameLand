@@ -1,0 +1,72 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(39,23,56,1) 17%, rgba(22,11,36,1) 100%);
+    padding: 0 1.5vh;
+    font-size: 1.5em;
+}
+
+div.acnt {
+    color: #fff;
+    flex-basis: 25%;
+    display: flex;
+}
+
+div.togl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+div.side {
+    display: none;
+    text-align: center;
+    background: linear-gradient(90deg, rgba(23,56,51,1) 17%, rgba(30,62,70,1) 100%);
+    position: absolute;
+    top: 10%;
+}
+
+.side a:not(:last-child) {
+    border-bottom: 1px solid #fff;
+}
+
+.side a {
+    display: block;
+    padding: 1vw 4vw;
+}
+
+.sldMenu {
+    cursor: pointer;
+}
+
+div.log {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-basis: 25%;
+}
+
+.log div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0 1vh;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+i {
+    color: rgb(40, 156, 139);
+    padding-left: .5vh;
+    cursor: pointer;
+}

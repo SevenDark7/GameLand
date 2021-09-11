@@ -1,0 +1,143 @@
+body {
+    background: linear-gradient(90deg, rgba(77,28,133,1) 17%, rgba(143,89,226,1) 100%);
+}
+
+section.container {
+    margin: 10% auto;
+    display: flex;
+    width: 80%;
+}
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(77,28,133,1) 17%, rgba(143,89,226,1) 100%);
+    flex-basis: 60%;
+    border-radius: 10px 0 0 10px;
+    box-shadow: -1px 0 10px black;
+    padding: 2vw;
+}
+
+main img {
+    padding: 0;
+    margin: 0;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 40%;
+    background: #fff;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 1px 0 10px black;
+    padding: 2vw;
+}
+
+aside > p {
+    padding: 0;
+    margin: 0;
+    font-family: Yerbaluisa;
+    font-size: 3em;
+}
+
+div.inpt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2vh 1vh;
+}
+
+div.user, div.pass, div.phone {
+    margin: 2vh 0;
+}
+
+div.phone {
+    display: none;
+}
+
+input {
+    background: transparent;
+    border: none;
+    font-size: 1em;
+    border-bottom: 1px solid black;
+    position: relative;
+    padding: 1vh 4vh;
+}
+
+i {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+}
+
+input:focus {
+    outline: none;
+}
+
+div.btn {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2vh 1vh;
+}
+
+button.butn {
+    font-size: 1em;
+    width: 10vh;
+    padding: 2% 3%;
+    cursor: pointer;
+    color: white;
+    border: none;
+}
+
+button.cncl {
+    background: linear-gradient(90deg, rgba(77,28,133,1) 15%, rgba(143,89,226,1) 100%);
+    border: 2px solid rgba(143,89,226,1);
+}
+
+button.lgin {
+    background: linear-gradient(90deg, rgba(143,89,226,1) 15%, rgba(77,28,133,1) 100%);
+    border: 2px solid rgba(77,28,133,1);
+}
+
+a {
+    text-decoration: none;
+    color: rgba(77,28,133,1);
+}
+
+div.panel {
+    text-align: center;
+    float: right;
+    right: 1em;
+    bottom: 1em;
+    position: fixed;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    padding: .5vh 2em;
+    border: 2px solid rgba(77,28,133,1);
+    font-family: IRANSansWeb;
+    display: none;
+}
+
+.panel h4, .panel h5 {
+    font-family: IRANSansWeb;
+}
+
+@font-face {
+    font-family: IRANSansWeb;
+    src: url('../fonts/irans-web.eot') format('eot'), url('../fonts/IRANSansWeb.woff') format('woff'),
+        url('../fonts/IRANSansWeb.ttf') format('ttf'), url('../fonts/IRANSansWeb.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: Angeles;
+    src: url('../fonts/Angeles.woff') format('woff');
+}
+
+@font-face {
+    font-family: Yerbaluisa;
+    src: url('../fonts/yerbaluisa_demo-font-FFP.woff') format('woff');
+}
