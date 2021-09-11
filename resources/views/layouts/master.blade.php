@@ -17,7 +17,7 @@
 
     </section>
 
-    {{-- @include('layouts.footer') --}}
+    @include('layouts.footer')
 
     <script src="/js/jquery-3.6.0.min.js"></script>
     <script src="/js/master.js"></script>
