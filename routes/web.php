@@ -20,3 +20,18 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/favorites', function () {
+    return view('favoGames');
+});
+
+Route::get('/games', function () {
+    $games = DB::table('games')->get();
+    return view('gamesList', [
+        'games' => $games
+    ]);
+});
