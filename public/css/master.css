@@ -1,3 +1,5 @@
+@import url('main.css');
+
 header {
     display: flex;
     justify-content: space-between;
@@ -73,7 +75,7 @@ img {
 i {
     color: rgb(21, 26, 34);
     padding-left: .5vh;
-    cursor: pointer;
+    cursor: default;
 }
 
 footer {
@@ -81,7 +83,6 @@ footer {
     background-color: rgba(71, 85, 105, 1);
     padding: 5vh;
     font-size: 1.5em;
-    margin-top: 30%;
 }
 
 footer > div > div:nth-child(1) {
@@ -133,3 +134,24 @@ footer p, footer a {
     direction: rtl;
     line-height: 2em;
 }
+
+article#copy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 3em;
+    background-color: rgb(24, 30, 41);
+}
+
+article#copy p {
+    color: #fff;
+    font-size: 2vh;
+}
+
+article#copy > div > a {
+    margin: 0 1vh;
+}
+
+/* Header And Footer Styles */
+
+
