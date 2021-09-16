@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ManualDB extends Migration
+class UsersProfile extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class ManualDB extends Migration
      */
     public function up()
     {
-        Schema::create('games', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
             $table->bigIncrements('ID');
-            $table->string('Name');
-            $table->text('Description');
-            $table->string('Genre', 50);
+            $table->string('Name', 100);
+            $table->string('Password', 20);
+            $table->string('Phone', 11);
         });
     }
 
@@ -28,6 +28,6 @@ class ManualDB extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('games');
+        Schema::dropIfExists('profiles');
     }
 }
