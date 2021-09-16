@@ -5,11 +5,11 @@
         </div>
         <div>
             <div class="mail">
-                <a href="#">SevenEncoder@gmail.com :ایمیل</a>
+                <a href="mailto:SevenEncoder@gmail.com">SevenEncoder@gmail.com :ایمیل</a>
                 <i class="material-icons">email</i>
             </div>
             <div class="telegram">
-                <a href="#">@SevenDark :تلگرام</a>
+                <a href="https://t.me/SevenDark">@SevenDark :تلگرام</a>
                 <i class="material-icons">near_me</i>
             </div>
         </div>
@@ -37,8 +37,12 @@
                 قرار دهد و آن ها را از انواع بازی ها مطلع سازد
             </p>
         </div>
-
     </div>
-
-
 </footer>
+<article id="copy">
+    <div>
+        <a href="https://www.instagram.com/sevendark.7/" target="_blank"><img src="/images/instagram.png" alt="Instagram"></a>
+        <a href="https://t.me/SevenDark" target="_blank"><img src="/images/telegram.png" alt="Telegram"></a>
+    </div>
+    <p>کلیه حقوق محتوای سایت متعلق به گیم شاپ میباشد و هرگونه کپی برداری از محتوا غیر قانونی خواهد بود</p>
+</article>
