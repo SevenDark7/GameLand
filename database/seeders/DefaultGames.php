@@ -14,22 +14,22 @@ class defaultGames extends Seeder
     public function run()
     {
         \DB::table('games')->insert([
-            ['Name' => 'The Last Of Us', 'Slug' => 'The+Last+Of+Us', 'Platform' => 'PS4', 'Release' => '07/22/2014', 'Publisher' => 'Sony', 'Genre' => 'Action, Adventure', 'Favorite' => 1],
-            ['Name' => 'God Of War', 'Slug' => 'God+Of+War', 'Platform' => 'PS4', 'Release' => '04/20/2018', 'Publisher' => 'Sony', 'Genre' => 'Action', 'Favorite' => 1],
-            ['Name' => 'Fortnite', 'Slug' => 'Fortnite', 'Platform' => 'PS4', 'Release' => '07/21/2017', 'Publisher' => 'Epic Games', 'Genre' => 'Action, Adventure', 'Favorite' => 0],
-            ['Name' => 'Ghost Of Tsushima', 'Slug' => 'Ghost+Of+Tsushima', 'Platform' => 'PS4', 'Release' => '08/20/2021', 'Publisher' => 'Sony', 'Genre' => 'Unique', 'Favorite' => 0],
-            ['Name' => 'FINAL FANTASY VII', 'Slug' => 'FINAL+FANTASY+VII', 'Platform' => 'PS4', 'Release' => '12/05/2015', 'Publisher' => 'SQUARE', 'Genre' => 'Role Playing Games', 'Favorite' => 1],
-            ['Name' => 'Mortal Kombat X', 'Slug' => 'Mortal+Kombat+X', 'Platform' => 'PS4', 'Release' => '04/14/2015', 'Publisher' => 'Warner Bros. Interactive', 'Genre' => 'Fighting', 'Favorite' => 0],
-            ['Name' => 'Bloodborne', 'Slug' => 'Bloodborne', 'Platform' => 'PS4', 'Release' => '03/24/2015', 'Publisher' => 'Sony', 'Genre' => 'Action', 'Favorite' => 0],
-            ['Name' => 'Battlefield 1', 'Slug' => 'Battlefield+1', 'Platform' => 'PS4', 'Release' => '10/21/2016', 'Publisher' => 'Electronic Arts Inc', 'Genre' => 'Shooter', 'Favorite' => 0],
-            ['Name' => 'Horizon Zero Dawn', 'Slug' => 'Horizon+Zero+Dawn', 'Platform' => 'PS4', 'Release' => '12/05/2017', 'Publisher' => 'Sony', 'Genre' => 'Action', 'Favorite' => 1],
-            ['Name' => 'Watch Dogs 2', 'Slug' => 'Watch+Dogs+2', 'Platform' => 'PS4', 'Release' => '11/15/2016', 'Publisher' => 'Ubisoft', 'Genre' => 'Adventure, Action', 'Favorite' => 1],
-            ['Name' => 'RESIDENT EVIL 2', 'Slug' => 'RESIDENT+EVIL+2', 'Platform' => 'PS4', 'Release' => '01/25/2019', 'Publisher' => 'Capcom', 'Genre' => 'Action, Horror', 'Favorite' => 0],
-            ['Name' => 'Assassin’s Creed Origins', 'Slug' => 'Assassins+Creed+Origins', 'Platform' => 'PS4', 'Release' => '10/27/2017', 'Publisher' => 'Ubisoft', 'Genre' => 'Adventure, Action', 'Favorite' => 1],
-            ['Name' => 'Battlefield 4', 'Slug' => 'Battlefield+4', 'Platform' => 'PS4', 'Release' => '11/15/2013', 'Publisher' => 'Electronic', 'Genre' => 'Action, Shooter', 'Favorite' => 1],
-            ['Name' => 'World War Z', 'Slug' => 'World+War+Z', 'Platform' => 'PS4', 'Release' => '04/16/2019', 'Publisher' => 'Mad Dog', 'Genre' => 'Action, Shooter', 'Favorite' => 1],
-            ['Name' => 'The Last Of Us Part II', 'Slug' => 'The+Last+Of+Us+Part+II', 'Platform' => 'PS4', 'Release' => '06/19/2020', 'Publisher' => 'Sony', 'Genre' => 'Action, Adventure', 'Favorite' => 1],
-            ['Name' => 'FAR CRY 5', 'Slug' => 'FAR+CRY+5', 'Platform' => 'PS4', 'Release' => '03/27/2018', 'Publisher' => 'Ubisoft', 'Genre' => 'Action, Shooter', 'Favorite' => 1]
+            ['id' => 'The Last Of Us', 'slug' => 'The+Last+Of+Us', 'platform' => 'PS4', 'release' => '07/22/2014', 'publisher' => 'Sony', 'genre' => 'Action, Adventure', 'favorite' => 1],
+            ['id' => 'God Of War', 'slug' => 'God+Of+War', 'platform' => 'PS4', 'release' => '04/20/2018', 'publisher' => 'Sony', 'genre' => 'Action', 'favorite' => 1],
+            ['id' => 'Fortnite', 'slug' => 'Fortnite', 'platform' => 'PS4', 'release' => '07/21/2017', 'publisher' => 'Epic Games', 'genre' => 'Action, Adventure', 'favorite' => 0],
+            ['id' => 'Ghost Of Tsushima', 'slug' => 'Ghost+Of+Tsushima', 'platform' => 'PS4', 'release' => '08/20/2021', 'publisher' => 'Sony', 'genre' => 'Unique', 'favorite' => 0],
+            ['id' => 'FINAL FANTASY VII', 'slug' => 'FINAL+FANTASY+VII', 'platform' => 'PS4', 'release' => '12/05/2015', 'publisher' => 'SQUARE', 'genre' => 'Role Playing Games', 'favorite' => 1],
+            ['id' => 'Mortal Kombat X', 'slug' => 'Mortal+Kombat+X', 'platform' => 'PS4', 'release' => '04/14/2015', 'publisher' => 'Warner Bros. Interactive', 'genre' => 'Fighting', 'favorite' => 0],
+            ['id' => 'Bloodborne', 'slug' => 'Bloodborne', 'platform' => 'PS4', 'release' => '03/24/2015', 'publisher' => 'Sony', 'genre' => 'Action', 'Favorite' => 0],
+            ['id' => 'Battlefield 1', 'slug' => 'Battlefield+1', 'platform' => 'PS4', 'release' => '10/21/2016', 'publisher' => 'Electronic Arts Inc', 'genre' => 'Shooter', 'favorite' => 0],
+            ['id' => 'Horizon Zero Dawn', 'slug' => 'Horizon+Zero+Dawn', 'platform' => 'PS4', 'release' => '12/05/2017', 'publisher' => 'Sony', 'genre' => 'Action', 'favorite' => 1],
+            ['id' => 'Watch Dogs 2', 'slug' => 'Watch+Dogs+2', 'platform' => 'PS4', 'release' => '11/15/2016', 'publisher' => 'Ubisoft', 'genre' => 'Adventure, Action', 'favorite' => 1],
+            ['id' => 'RESIDENT EVIL 2', 'slug' => 'RESIDENT+EVIL+2', 'platform' => 'PS4', 'release' => '01/25/2019', 'publisher' => 'Capcom', 'genre' => 'Action, Horror', 'favorite' => 0],
+            ['id' => 'Assassin’s Creed Origins', 'slug' => 'Assassins+Creed+Origins', 'platform' => 'PS4', 'release' => '10/27/2017', 'publisher' => 'Ubisoft', 'genre' => 'Adventure, Action', 'favorite' => 1],
+            ['id' => 'Battlefield 4', 'slug' => 'Battlefield+4', 'platform' => 'PS4', 'release' => '11/15/2013', 'publisher' => 'Electronic', 'genre' => 'Action, Shooter', 'favorite' => 1],
+            ['id' => 'World War Z', 'slug' => 'World+War+Z', 'platform' => 'PS4', 'release' => '04/16/2019', 'publisher' => 'Mad Dog', 'genre' => 'Action, Shooter', 'favorite' => 1],
+            ['id' => 'The Last Of Us Part II', 'slug' => 'The+Last+Of+Us+Part+II', 'platform' => 'PS4', 'release' => '06/19/2020', 'publisher' => 'Sony', 'genre' => 'Action, Adventure', 'favorite' => 1],
+            ['id' => 'FAR CRY 5', 'slug' => 'FAR+CRY+5', 'platform' => 'PS4', 'release' => '03/27/2018', 'publisher' => 'Ubisoft', 'genre' => 'Action, Shooter', 'favorite' => 1]
         ]);
     }
 }
