@@ -40,43 +40,48 @@ Route::get('/games', function () {
 
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {
-        return view('admin.admin');
+        return view('admin.login');
     });
 
-    Route::get('/comments', function () {
+    Route::get('/articles/comments', function () {
         return view('articles.comments');
     });
 
-    Route::get('/register', function () {
-        $games = Game::all();
-        return view('admin.articles.create', [
-            'games' => $games
-        ]);
+    Route::get('/articles/panel', function () {
+//        $games = Game::all();
+        return view('admin.articles.panel');
     });
 
-    Route::post('/articles/create', function () {
+    Route::post('/articles/register', function () {
         $validator = Validator::make(request()->all(), [
             'name' => 'required',
             'release' => 'required',
             'publish' => 'required',
             'genre' => 'required'
-        ]);
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator);
-        }
-        $release = array();
-        $release = explode('/', request('release'));
-        strlen($release[0]) < 2 ? $release[0] = "0" . $release[0] : $release[0];
-        strlen($release[1]) < 2 ? $release[1] = "0" . $release[1] : $release[1];
-        $finalRelease = implode('/', $release);
+        ])->validated();
         Game::create([
-            'Name' => ucwords(request('name')),
-            'Slug' => implode('+', explode(' ', request('name'))),
-            'Platform' => strtoupper(request('platform')),
-            'Release' => $finalRelease,
-            'Publisher' => ucwords(request('publish')),
-            'Genre' => ucwords(request('genre'))
+            'id' => ucwords($validator['name']),
+            'slug' => implode('+', explode(' ', $validator['name'])),
+            'platform' => strtoupper(request('platform')),
+            'release' => $validator['release'],
+            'publisher' => ucwords($validator['publish']),
+            'genre' => ucwords($validator['genre'])
         ]);
-        return redirect('admin/register');
+        return back();
+    });
+    Route::post('/articles/update', function () {
+        $validator = Validator::make(request()->all(), [
+            'name' => 'required'
+        ])->validated();
+        $article = Game::findOrFail($validator['name']);
+        if (isset($article)) {
+            return view('admin.articles.panel', [
+                'finded' => $article
+            ]);
+        }else {
+            return view('admin.articles.panel', [
+                'notFind' => 'true'
+            ]);
+        }
     });
 });
