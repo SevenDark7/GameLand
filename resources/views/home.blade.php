@@ -4,7 +4,7 @@
 
 @section('content')
     <article class="descrip">
-        <div class="first"><img src="/images/home.gif" alt="GameShop"></div>
+        <div class="first"><img src="/images/console.gif" alt="GameShop"></div>
         <div class="secound">روزانه اخبار وسیعی از بازی های انواع کنسول ها در جهان منتشر میشود،
             از آنجایی که در کشورمان گیمر های زیادی علاقه مند بر دریافت بروز این اطلاعات دارند، گیم شاپ قصد دارد تا
             کاملترین و جدیدترین اخبار گیمینگ را در اختیار علاقه مندان این حرفه قرار دهد تا بازیکنان بتوانند با بالاترین
