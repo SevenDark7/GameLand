@@ -82,19 +82,12 @@
                 </form>
             </li>
             <li class="list-group-item bg-dark border-white rounded-0 border-left-0">
-                @if(isset($notFind))
-                    <div class="alert alert-danger">
-                        <ul class="text-right" dir="auto">
-                            <li>بازی با این نام یافت نشد</li>
-                        </ul>
-                    </div>
-                @endif
                 <form action="/admin/articles/update" method="post">
                     @csrf
                     <legend class="text-info">Update Game</legend>
                     <div class="form-group">
-                        <label for="name" class="text-light">Game Name</label>
-                        <input type="text" name="name" class="form-control" autocomplete="off" placeholder="Enter The Name Of The Game To Edit">
+                        <label for="id" class="text-light">Game Name</label>
+                        <input type="text" name="id" class="form-control" autocomplete="off" placeholder="Enter The Name Of The Game To Edit">
                     </div>
                     <div class="d-flex justify-content-around">
                         <button type="submit" class="btn btn-sm w-25 btn-outline-success">Check</button>
@@ -102,30 +95,30 @@
                     </div>
                 </form>
 
-                @if(isset($finded))
+                @if(isset($article))
                     <form action="/admin/articles/updated" method="post">
                         @csrf
                         <table class="table table-dark table-sm mt-3">
                             <tbody>
                             <tr>
                                 <td><label for="New" class="text-light">Edited Name</label></td>
-                                <td><input type="text" name="updatedName" class="form-control" value="{{ $finded->id }}" autocomplete="off" placeholder="Enter The Edited Name Of The Game"></td>
+                                <td><input type="text" name="updatedName" class="form-control" value="{{ $article->id }}" autocomplete="off" placeholder="Enter The Edited Name Of The Game"></td>
                             </tr>
                             <tr>
                                 <td><label for="New" class="text-light">Edited Platform</label></td>
-                                <td><input type="text" name="updatedPlatform" class="form-control" value="{{ $finded->platform }}" autocomplete="off" placeholder="Enter The Game Edited Platform"></td>
+                                <td><input type="text" name="updatedPlatform" class="form-control" value="{{ $article->platform }}" autocomplete="off" placeholder="Enter The Game Edited Platform"></td>
                             </tr>
                             <tr>
                                 <td><label for="New" class="text-light">Edited Release</label></td>
-                                <td><input type="text" name="updatedRelease" class="form-control" value="{{ $finded->release }}" autocomplete="off" placeholder="Enter The Edited Release Date Of The Game"></td>
+                                <td><input type="text" name="updatedRelease" class="form-control" value="{{ $article->release }}" autocomplete="off" placeholder="Enter The Edited Release Date Of The Game"></td>
                             </tr>
                             <tr>
                                 <td><label for="New" class="text-light">Edited Publisher</label></td>
-                                <td><input type="text" name="updatedPublisher" class="form-control" value="{{ $finded->publisher }}" autocomplete="off" placeholder="Enter The Edited Game Publisher"></td>
+                                <td><input type="text" name="updatedPublisher" class="form-control" value="{{ $article->publisher }}" autocomplete="off" placeholder="Enter The Edited Game Publisher"></td>
                             </tr>
                             <tr>
                                 <td><label for="New" class="text-light">Edited Genre</label></td>
-                                <td><input type="text" name="updatedGenre" class="form-control" value="{{ $finded->genre }}" autocomplete="off" placeholder="Specify The Edited Genre Of The Game"></td>
+                                <td><input type="text" name="updatedGenre" class="form-control" value="{{ $article->genre }}" autocomplete="off" placeholder="Specify The Edited Genre Of The Game"></td>
                             </tr>
                             </tbody>
                         </table>

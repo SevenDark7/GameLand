@@ -16,7 +16,8 @@
         </main>
         <aside>
             <p>Login Your Account</p>
-            <form action="/" method="post">
+            <form action="/login" method="post">
+                @csrf
                 <div class="inpt">
                     <div class="user">
                         <i class="material-icons">person</i>

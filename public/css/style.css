@@ -1,5 +1,6 @@
 body {
     background: linear-gradient(90deg, rgba(77,28,133,1) 17%, rgba(143,89,226,1) 100%);
+    font-family: YekanBakh;
 }
 
 section.container {
@@ -10,7 +11,7 @@ section.container {
 
 main {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     background: linear-gradient(90deg, rgba(77,28,133,1) 17%, rgba(143,89,226,1) 100%);
     flex-basis: 60%;
@@ -22,6 +23,8 @@ main {
 main img {
     padding: 0;
     margin: 0;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 aside {
@@ -128,7 +131,7 @@ div.panel {
 
 @font-face {
     font-family: IRANSansWeb;
-    src: url('../fonts/irans-web.eot') format('eot'), url('../fonts/IRANSansWeb.woff') format('woff'),
+    src: url('../fonts/IRANSansWeb.eot') format('eot'), url('../fonts/IRANSansWeb.woff') format('woff'),
         url('../fonts/IRANSansWeb.ttf') format('ttf'), url('../fonts/IRANSansWeb.woff2') format('woff2');
 }
 
@@ -140,4 +143,9 @@ div.panel {
 @font-face {
     font-family: Yerbaluisa;
     src: url('../fonts/yerbaluisa_demo-font-FFP.woff') format('woff');
+}
+
+@font-face {
+    font-family: YekanBakh;
+    src: url('../fonts/YekanBakh-Bold.woff') format('woff');
 }
