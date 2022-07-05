@@ -1,8 +1,3 @@
-body {
-    background: linear-gradient(90deg, rgba(77,28,133,1) 17%, rgba(143,89,226,1) 100%);
-    font-family: YekanBakh;
-}
-
 section.container {
     margin: 10% auto;
     display: flex;

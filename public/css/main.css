@@ -1,14 +1,19 @@
 section.content {
-    background: linear-gradient(90deg, rgba(157, 182, 184, 0.86) 12%, rgba(154, 184, 187, 0.883) 100%);
+    background: #011627;
+}
+
+.navbar-expand-lg {
+    background: #011627;
 }
 
 article.descrip {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(90deg, rgb(158, 198, 218) 17%, rgba(176,194,222,1) 100%);
+    background: #011627;
     font-size: 1.5em;
-    padding: 0 2vw;
+    padding: 5vh 2vw;
+    color: #fff;
 }
 
 div.first {
@@ -29,56 +34,29 @@ div.secound {
     font-family: Vazir;
 }
 
-article.select {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(/images/background.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+.jumbotron {
+    font-family: Vazir;
 }
 
-article.select > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: baseline;
-    border: 1px solid white;
-    padding: 1em;
-    flex-basis: 16%;
-    height: 27vw;
-    margin: 0 2vw;
-    text-align: center;
-    cursor: pointer;
-    opacity: 0;
-    transition: flex-basis .50s ease-in;
-    background:  rgba(90, 104, 122, 0.5);
-    border-radius: 5px;
+.carousel-inner {
+    font-family: IRANSansWeb;
 }
 
-article.select > div:hover {
-    flex-basis: 17%;
+footer {
+    background: #011627;
+    font-family: IRANSansWeb;
 }
 
-article.select h4 {
-    font-size: 1.5em;
-    color: #fff;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 1vh;
-    font-family: Tanha;
-}
 
-article.select p {
-    font-size: 1.5em;
-    color: #fff;
-    line-height: 1.5em;
-    margin: 0;
-    /* overflow: auto; */
-}
 
 @font-face {
     font-family: Vazir;
     src: url(/fonts/Vazir.eot) format('eot'), url(/fonts/Vazir.woff) format('woff'), url(/fonts/Vazir.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: IRANSansWeb;
+    src: url(/fonts/IRANSansWeb.ttf);
 }
 
 @font-face {
