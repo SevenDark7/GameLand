@@ -7,27 +7,41 @@ section.content {
 }
 
 article.descrip {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
     background: #011627;
     font-size: 1.5em;
     padding: 5vh 2vw;
-    color: #fff;
+    /*color: #fff;*/
 }
 
-div.first {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    flex-basis: 40%;
+.game-col {
+    background: rgb(204,203,222);
+    background: linear-gradient(45deg, rgba(204,203,222,0.6012605725884104) 0%,
+    rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(204,203,222,0.6012605725884104) 100%);
+    border-bottom: 1px dotted #011627;
+    height: 4rem;
 }
 
-div.secound {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    flex-basis: 60%;
+.game-col col-6 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.game-col span {
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+i {
+    font-size: .8rem !important;
+}
+
+div.home-descrip {
     line-height: 2em;
     text-align: justify;
     direction: rtl;
@@ -47,6 +61,10 @@ footer {
     font-family: IRANSansWeb;
 }
 
+.gamesCol {
+    font-family: IRANSansWeb;
+    padding: 2rem;
+}
 
 
 @font-face {

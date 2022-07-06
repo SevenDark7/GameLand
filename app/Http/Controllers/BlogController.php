@@ -25,7 +25,7 @@ class BlogController extends Controller
             ['status', 1]
         ])->with(['user', 'likes', 'comments'])->paginate(10);
 
-        return view('blogs.blog');
+        return view('blogs.blog', compact('blogs'));
     }
 
     /**

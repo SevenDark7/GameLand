@@ -8,21 +8,10 @@
             چطوری؟ فقط کافیه توی گیم لند ثبت نام کنی و بازی خودتو برای هر کنسولی که هست به فروش بزاری یا دنبال بازی مورد
             علاقه خودت بگردی
             تا بتونی بهترین گزینه رو پیدا کنی.</p>
-        <hr class="my-4">
-        <p class="text-right" dir="rtl">تو میتونی هر بازی که میخوای رو برای هر کنسولی به مزایده بزاری و بهترین نتیجه رو
-            بگیری.</p>
-        <p class="lead text-right">
-            <a class="btn btn-primary" href="#" role="button">بیشتر بدانید</a>
-        </p>
-        <div class="d-flex justify-content-around mt-5 text-right" dir="rtl">
-            <h4><span class="badge badge-primary">بازی ها: </span></h4>
-            <h4><span class="badge badge-primary">خرید و فروش ها: </span></h4>
-            <h4><span class="badge badge-primary">مقالات: </span></h4>
-        </div>
     </div>
     <!-- Jumbotron -->
 
-    <hr class="my-5">
+    <hr class="my-5 bg-light">
 
     <!--Carousel Wrapper-->
     <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">

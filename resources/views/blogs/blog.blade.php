@@ -3,36 +3,26 @@
 @section('title', 'Blog')
 
 @section('content')
-    <div class="card-deck">
-        <div class="card">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <div class="container py-5">
+
+        @if(count($blogs) < 1)
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4 text-center" dir="rtl">محتوایی یافت نشد</h1>
+                    <p class="lead text-center" dir="rtl">متاسفانه داده ای برای نمایش در صفحه مورد نظر وجود ندارد</p>
+                </div>
             </div>
-            <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
+        @endif
+
+        @foreach($blogs as $blog)
+            <div class="card mb-3">
+                <img class="card-img-top" src="{{ 'http://localhost/' . $blog->image }}" alt="Blog Image Cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ $blog->title }}</h5>
+                    <p class="card-text">{{ $blog->description }}</p>
+                    <p class="card-text"><small class="text-muted">{{ $blog->updated_at }}</small></p>
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </div>
+        @endforeach
     </div>
 @endsection
