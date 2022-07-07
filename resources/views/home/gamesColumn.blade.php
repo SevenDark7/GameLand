@@ -6,75 +6,27 @@
                 <p class="lead">بازی هایی که به تازگی منتشر شده اند</p>
             </div>
             <div class="row w-90 mx-3 p-2 text-right border-top border-left border-info">
-                <div class="game-col align-items-center col-12 col-md-12 text-dark">
-                    <div class="row w-100 h-100 align-items-center">
-                        <div class="col-6">
-                            <i class="fa fa-gamepad" aria-hidden="true"></i>
-                            <span>World War Z</span>
+                @foreach($recents as $recent)
+                    <a href="{{ '/game/' . $recent->slug }}" class="game-col align-items-center col-12 col-md-12 text-dark" style="text-decoration: none">
+                        <div class="row w-100 h-100 align-items-center">
+                            <div class="col-5">
+                                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                                <span>{{ $recent->name }}</span>
+                            </div>
+                            <div class="col-3">
+                                <i class="fa fa-tags" aria-hidden="true"></i>
+                                <span>{{ $recent->platform }}</span>
+                            </div>
+                            <div class="col-3">
+                                <i class="fa fa-list" aria-hidden="true"></i>
+                                <span>{{ $recent->genre }}</span>
+                            </div>
+                            <div class="col-1">
+                                <i class='fas fa-long-arrow-alt-left' style="font-size: 20px !important;"></i>
+                            </div>
                         </div>
-                        <div class="col-3">
-                            <i class="fa fa-tags" aria-hidden="true"></i>
-                            <span>PS4</span>
-                        </div>
-                        <div class="col-3">
-                            <i class="fa fa-list" aria-hidden="true"></i>
-                            <span>Action</span>
-                        </div>
-                    </div>
-                </div>
-
-                {{--Repetitive pattern--}}
-
-                <div class="game-col align-items-center col-12 col-md-12 text-dark">
-                    <div class="row w-100 h-100 align-items-center">
-                        <div class="col-6">
-                            <i class="fa fa-gamepad" aria-hidden="true"></i>
-                            <span>World War Z</span>
-                        </div>
-                        <div class="col-3">
-                            <i class="fa fa-tags" aria-hidden="true"></i>
-                            <span>PS4</span>
-                        </div>
-                        <div class="col-3">
-                            <i class="fa fa-list" aria-hidden="true"></i>
-                            <span>Action</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="game-col align-items-center col-12 col-md-12 text-dark">
-                    <div class="row w-100 h-100 align-items-center">
-                        <div class="col-6">
-                            <i class="fa fa-gamepad" aria-hidden="true"></i>
-                            <span>World War Z</span>
-                        </div>
-                        <div class="col-3">
-                            <i class="fa fa-tags" aria-hidden="true"></i>
-                            <span>PS4</span>
-                        </div>
-                        <div class="col-3">
-                            <i class="fa fa-list" aria-hidden="true"></i>
-                            <span>Action</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="game-col align-items-center col-12 col-md-12 text-dark">
-                    <div class="row w-100 h-100 align-items-center">
-                        <div class="col-6">
-                            <i class="fa fa-gamepad" aria-hidden="true"></i>
-                            <span>World War Z</span>
-                        </div>
-                        <div class="col-3">
-                            <i class="fa fa-tags" aria-hidden="true"></i>
-                            <span>PS4</span>
-                        </div>
-                        <div class="col-3">
-                            <i class="fa fa-list" aria-hidden="true"></i>
-                            <span>Action</span>
-                        </div>
-                    </div>
-                </div>
-
-                {{--End Repetitive pattern--}}
+                    </a>
+                @endforeach
 
             </div>
         </section>
@@ -84,76 +36,27 @@
                 <p class="lead">بازی هایی که بیشترین بازدید را دارند</p>
             </div>
             <div class="row w-90 mx-3 p-2 text-right border-bottom border-right border-info">
-                <div class="game-col align-items-center col-12 col-md-12 text-dark">
-                    <div class="row w-100 h-100 align-items-center">
-                        <div class="col-6">
-                            <i class="fa fa-gamepad" aria-hidden="true"></i>
-                            <span>World War Z</span>
+                @foreach($mosts as $most)
+                    <a href="{{ '/game/' . $most->slug }}" class="game-col align-items-center col-12 col-md-12 text-dark" style="text-decoration: none">
+                        <div class="row w-100 h-100 align-items-center">
+                            <div class="col-5">
+                                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                                <span>{{ $most->name }}</span>
+                            </div>
+                            <div class="col-3">
+                                <i class="fa fa-tags" aria-hidden="true"></i>
+                                <span>{{ $most->platform }}</span>
+                            </div>
+                            <div class="col-3">
+                                <i class="fa fa-list" aria-hidden="true"></i>
+                                <span>{{ $most->genre }}</span>
+                            </div>
+                            <div class="col-1">
+                                <i class='fas fa-long-arrow-alt-left' style="font-size: 20px !important;"></i>
+                            </div>
                         </div>
-                        <div class="col-3">
-                            <i class="fa fa-tags" aria-hidden="true"></i>
-                            <span>PS4</span>
-                        </div>
-                        <div class="col-3">
-                            <i class="fa fa-list" aria-hidden="true"></i>
-                            <span>Action</span>
-                        </div>
-                    </div>
-                </div>
-
-                {{--Repetitive pattern--}}
-
-                <div class="game-col align-items-center col-12 col-md-12 text-dark">
-                    <div class="row w-100 h-100 align-items-center">
-                        <div class="col-6">
-                            <i class="fa fa-gamepad" aria-hidden="true"></i>
-                            <span>World War Z</span>
-                        </div>
-                        <div class="col-3">
-                            <i class="fa fa-tags" aria-hidden="true"></i>
-                            <span>PS4</span>
-                        </div>
-                        <div class="col-3">
-                            <i class="fa fa-list" aria-hidden="true"></i>
-                            <span>Action</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="game-col align-items-center col-12 col-md-12 text-dark">
-                    <div class="row w-100 h-100 align-items-center">
-                        <div class="col-6">
-                            <i class="fa fa-gamepad" aria-hidden="true"></i>
-                            <span>World War Z</span>
-                        </div>
-                        <div class="col-3">
-                            <i class="fa fa-tags" aria-hidden="true"></i>
-                            <span>PS4</span>
-                        </div>
-                        <div class="col-3">
-                            <i class="fa fa-list" aria-hidden="true"></i>
-                            <span>Action</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="game-col align-items-center col-12 col-md-12 text-dark">
-                    <div class="row w-100 h-100 align-items-center">
-                        <div class="col-6">
-                            <i class="fa fa-gamepad" aria-hidden="true"></i>
-                            <span>World War Z</span>
-                        </div>
-                        <div class="col-3">
-                            <i class="fa fa-tags" aria-hidden="true"></i>
-                            <span>PS4</span>
-                        </div>
-                        <div class="col-3">
-                            <i class="fa fa-list" aria-hidden="true"></i>
-                            <span>Action</span>
-                        </div>
-                    </div>
-                </div>
-
-                {{--End Repetitive pattern--}}
-
+                    </a>
+                @endforeach
             </div>
         </section>
     </div>

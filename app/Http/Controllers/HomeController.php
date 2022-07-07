@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
+use App\Models\Game;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -16,7 +18,22 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home.home');
+        $recents = Game::query()->where([
+            ['active', 1],
+            ['status', 1]
+        ])->latest()->limit(7)->get();
+
+        $mosts = Game::query()->where([
+            ['active', 1],
+            ['status', 1]
+        ])->latest('visit')->limit(7)->get();
+
+        $blogs = Blog::query()->where([
+            ['active', 1],
+            ['status', 1]
+        ])->latest()->limit(8)->get()->toArray();
+
+        return view('home.home', compact('recents', 'mosts', 'blogs'));
     }
 
     /**
