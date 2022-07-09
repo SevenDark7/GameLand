@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\GameController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Game;
@@ -21,6 +22,12 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::prefix('/blogs')->group(function () {
     Route::get('/', [BlogController::class, 'index']);
+    Route::get('/single', [BlogController::class, 'show']);
+});
+
+Route::prefix('/games')->group(function () {
+    Route::get('/', [GameController::class, 'index']);
+    Route::get('/single', [BlogController::class, 'show']);
 });
 
 

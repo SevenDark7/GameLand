@@ -72,13 +72,13 @@ class BlogController extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @param Blog $blog
-     * @return Response
+     * @return Application|Factory|View
      */
-    public function show(Blog $blog): Response
+    public function show()
     {
-        $blogInfo = Blog::query()->with(['user', 'likes', 'comments'])->find($blog->id);
+//        $blogInfo = Blog::query()->with(['user', 'likes', 'comments'])->find($blog->id);
+
+        return view('blogs.single');
     }
 
     /**
