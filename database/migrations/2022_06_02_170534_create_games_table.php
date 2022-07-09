@@ -23,6 +23,7 @@ class CreateGamesTable extends Migration
             $table->string('genre')->nullable();
             $table->longText('description')->nullable();
             $table->text('address')->nullable();
+            $table->string('image')->nullable();
             $table->foreignId('user_id')->constrained()
                 ->onDelete('cascade');
 //            $table->foreignId('city_id')->constrained()

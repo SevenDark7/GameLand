@@ -7,9 +7,9 @@
             </div>
             <div class="row w-90 mx-3 p-2 text-right border-top border-left border-info">
                 @foreach($recents as $recent)
-                    <a href="{{ '/game/' . $recent->slug }}" class="game-col align-items-center col-12 col-md-12 text-dark" style="text-decoration: none">
-                        <div class="row w-100 h-100 align-items-center">
-                            <div class="col-5">
+                    <div class="game-col align-items-center col-12 col-md-12 text-dark">
+                        <div class="row record w-100 h-100 align-items-center">
+                            <div class="col-4">
                                 <i class="fa fa-gamepad" aria-hidden="true"></i>
                                 <span>{{ $recent->name }}</span>
                             </div>
@@ -21,11 +21,13 @@
                                 <i class="fa fa-list" aria-hidden="true"></i>
                                 <span>{{ $recent->genre }}</span>
                             </div>
-                            <div class="col-1">
-                                <i class='fas fa-long-arrow-alt-left' style="font-size: 20px !important;"></i>
+                            <div class="col-2">
+                                <a href="{{ '/games/' . $recent->slug }}" style="text-decoration: none; color: inherit">
+                                    <i class='fas fa-long-arrow-alt-left' style="font-size: 20px !important;"></i>
+                                </a>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 @endforeach
 
             </div>
@@ -37,9 +39,9 @@
             </div>
             <div class="row w-90 mx-3 p-2 text-right border-bottom border-right border-info">
                 @foreach($mosts as $most)
-                    <a href="{{ '/game/' . $most->slug }}" class="game-col align-items-center col-12 col-md-12 text-dark" style="text-decoration: none">
-                        <div class="row w-100 h-100 align-items-center">
-                            <div class="col-5">
+                    <div class="game-col align-items-center col-12 col-md-12 text-dark">
+                        <div class="row record w-100 h-100 align-items-center">
+                            <div class="col-4">
                                 <i class="fa fa-gamepad" aria-hidden="true"></i>
                                 <span>{{ $most->name }}</span>
                             </div>
@@ -51,11 +53,13 @@
                                 <i class="fa fa-list" aria-hidden="true"></i>
                                 <span>{{ $most->genre }}</span>
                             </div>
-                            <div class="col-1">
-                                <i class='fas fa-long-arrow-alt-left' style="font-size: 20px !important;"></i>
+                            <div class="col-2">
+                                <a href="{{ '/games/' . $most->slug }}" style="text-decoration: none; color: inherit">
+                                    <i class='fas fa-long-arrow-alt-left' style="font-size: 20px !important;"></i>
+                                </a>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 @endforeach
             </div>
         </section>

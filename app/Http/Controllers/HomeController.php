@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +22,7 @@ class HomeController extends Controller
         $recents = Game::query()->where([
             ['active', 1],
             ['status', 1]
-        ])->latest()->limit(7)->get();
+        ])->latest('id')->limit(7)->get();
 
         $mosts = Game::query()->where([
             ['active', 1],
@@ -31,7 +32,7 @@ class HomeController extends Controller
         $blogs = Blog::query()->where([
             ['active', 1],
             ['status', 1]
-        ])->latest()->limit(8)->get()->toArray();
+        ])->latest('id')->limit(8)->get()->toArray();
 
         return view('home.home', compact('recents', 'mosts', 'blogs'));
     }

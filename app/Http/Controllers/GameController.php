@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Game;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class GameController extends Controller
@@ -15,13 +17,17 @@ class GameController extends Controller
      */
     public function index()
     {
-        return view('games.list');
+        $games = Game::query()->where([
+            ['active', 1],
+            ['status', 1]
+        ])->latest('id')->get();
+
+        return view('games.list', compact('games'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -31,21 +37,30 @@ class GameController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Application|Factory|View
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'image' => ['required','image','mimes:jpeg,png,jpg']
+        ]);
+
+        if ($request->hasFile('image')) {
+            $uploadedFile = $request->file('image');
+            $fileName = time() . '.' . $uploadedFile->getClientOriginalExtension();
+            $request->image = $uploadedFile->storePubliclyAs('/images', $fileName);
+        }
+
+        return view('games.list');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Game $game
      */
-    public function show($id)
+    public function show(Game $game)
     {
         //
     }
@@ -53,10 +68,9 @@ class GameController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Game $game
      */
-    public function edit($id)
+    public function edit(Game $game)
     {
         //
     }
@@ -64,11 +78,10 @@ class GameController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param Game $game
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Game $game)
     {
         //
     }
@@ -76,11 +89,12 @@ class GameController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Game $game
+     * @return RedirectResponse
      */
-    public function destroy($id)
+    public function destroy(Game $game): RedirectResponse
     {
-        //
+        $game->delete();
+        return redirect()->back();
     }
 }
