@@ -18,7 +18,7 @@
                             </h1>
                             <div class="postcard__subtitle small">
                                 <time datetime="2020-05-25 12:00:00">
-                                    <i class="fas fa-calendar-alt ml-2"></i>{{ $game->release }}
+                                    <i class="fas fa-calendar-alt ml-2"></i>{{ jdate($game->release)->format('Y-m-d') }}
                                 </time>
                             </div>
                             <div class="postcard__bar"></div>
@@ -43,7 +43,7 @@
                             </h1>
                             <div class="postcard__subtitle small">
                                 <time datetime="2020-05-25 12:00:00">
-                                    <i class="fas fa-calendar-alt ml-2"></i>{{ $game->release }}
+                                    <i class="fas fa-calendar-alt ml-2"></i>{{ jdate($game->release)->format('Y-m-d') }}
                                 </time>
                             </div>
                             <div class="postcard__bar"></div>
