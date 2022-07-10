@@ -26,7 +26,7 @@
                             <ul class="postcard__tagbox">
                                 <li class="tag__item"><i class="fas fa-tag ml-2"></i>{{ $game->platform }}</li>
                                 <li class="tag__item"><i class="fas fa-list ml-2"></i>{{ $game->genre }}</li>
-                                <li class="tag__item"><i class="fas fa-time ml-2"></i>{{ $game->created_at }}</li>
+                                <li class="tag__item"><i class="fas fa-time ml-2"></i>{{ jdate($game->created_at)->ago() }}</li>
                                 <li class="tag__item play blue">
                                     <a href="{{ '/games/' . $game->slug }}"><i class="fas fa-search ml-2"></i>مشاهده</a>
                                 </li>
@@ -51,7 +51,7 @@
                             <ul class="postcard__tagbox">
                                 <li class="tag__item"><i class="fas fa-tag ml-2"></i>{{ $game->platform }}</li>
                                 <li class="tag__item"><i class="fas fa-list ml-2"></i>{{ $game->genre }}</li>
-                                <li class="tag__item"><i class="fas fa-time ml-2"></i>{{ $game->created_at }}</li>
+                                <li class="tag__item"><i class="fas fa-time ml-2"></i>{{ jdate($game->created_at)->ago() }}</li>
                                 <li class="tag__item play blue">
                                     <a href="{{ '/games/' . $game->slug }}"><i class="fas fa-search ml-2"></i>مشاهده</a>
                                 </li>

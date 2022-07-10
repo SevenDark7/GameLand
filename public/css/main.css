@@ -29,15 +29,16 @@ article.descrip {
     height: 4rem;
 }
 
-.record > div {
+.record {
     white-space: nowrap;
     overflow-x: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
     cursor: default;
+    text-overflow: ellipsis;
 }
 
-.record > div::-webkit-scrollbar {
+.record::-webkit-scrollbar {
     display: none;
 }
 
