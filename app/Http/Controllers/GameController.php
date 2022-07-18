@@ -58,11 +58,12 @@ class GameController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Game $game
+     * @return Application|Factory|View
      */
     public function show(Game $game)
     {
-        //
+        $gameInfo = Game::query()->find($game->id);
+        return view('games.single', compact('gameInfo'));
     }
 
     /**

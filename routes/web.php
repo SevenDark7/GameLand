@@ -27,7 +27,7 @@ Route::prefix('/blogs')->group(function () {
 
 Route::prefix('/games')->group(function () {
     Route::get('/', [GameController::class, 'index']);
-    Route::get('/single', [BlogController::class, 'show']);
+    Route::get('/{game}', [GameController::class, 'show']);
 });
 
 

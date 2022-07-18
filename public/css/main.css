@@ -4,12 +4,12 @@ body {
     text-rendering: optimizeLegibility;
 }
 
-section.content {
-    background: #011627;
+.row {
+    margin: 0 !important;
 }
 
-.navbar-expand-lg {
-    background: #011627;
+section.content {
+    background-color: #011627 !important;
 }
 
 article.descrip {
@@ -71,24 +71,24 @@ div.home-descrip {
     line-height: 2em;
     text-align: justify;
     direction: rtl;
-    font-family: Vazir;
+    font-family: Vazir, sans-serif;
 }
 
 .jumbotron {
-    font-family: Vazir;
+    font-family: Vazir, sans-serif;
 }
 
 .carousel-inner {
-    font-family: IRANSansWeb;
+    font-family: IRANSansWeb, sans-serif;
 }
 
 footer {
     background: #011627;
-    font-family: IRANSansWeb;
+    font-family: IRANSansWeb, sans-serif;
 }
 
 .gamesCol {
-    font-family: IRANSansWeb;
+    font-family: IRANSansWeb, sans-serif;
     padding: 2rem;
 }
 
@@ -97,7 +97,7 @@ footer {
 /* This pen */
 
 .bg-custom {
-    background: #011627;
+    background-color: #011627 !important;
 }
 
 a, a:hover {
@@ -118,7 +118,7 @@ a, a:hover {
     text-transform: uppercase;
     text-align: center;
     font-size: 2rem;
-    font-family: IRANSansWeb;
+    font-family: IRANSansWeb, sans-serif;
 }
 
 /* Cards */
@@ -131,7 +131,7 @@ a, a:hover {
     overflow: hidden;
     position: relative;
     color: #ffffff;
-    font-family: Vazir;
+    font-family: Vazir, sans-serif;
 }
 
 .postcard.light {
@@ -373,20 +373,40 @@ a, a:hover {
     }
 }
 
+.single-image {
+    height: 30rem;
+    max-height: 100%;
+}
+
+.single-box {
+    background: rgb(204, 203, 222);
+    background: linear-gradient(45deg, rgba(204, 203, 222, 0.6012605725884104) 0%,
+    rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0.8) 70%, rgba(204, 203, 222, 0.6012605725884104) 100%);
+    border-radius: 15px;
+    font-family: Vazir;
+}
+.single-box > p {
+    width: 45rem;
+}
+
+.single-details {
+    font-family: IRANSansWeb;
+    line-height: 5rem;
+}
 
 /* End Game Styles*/
 
 @font-face {
     font-family: Vazir;
-    src: url(/fonts/Vazir.eot) format('eot'), url(/fonts/Vazir.woff) format('woff'), url(/fonts/Vazir.woff2) format('woff2');
+    src: url(../fonts/Vazir.eot) format('eot'), url(../fonts/Vazir.woff) format('woff'), url(../fonts/Vazir.woff2) format('woff2');
 }
 
 @font-face {
     font-family: IRANSansWeb;
-    src: url(/fonts/IRANSansWeb.ttf);
+    src: url(../fonts/IRANSansWeb.ttf);
 }
 
 @font-face {
     font-family: Tanha;
-    src: url(/fonts/Tanha.eot) format('eot'), url(/fonts/Tanha.woff) format('woff'), url(/fonts/Tanha.woff2) format('woff2');
+    src: url(../fonts/Tanha.eot) format('eot'), url(../fonts/Tanha.woff) format('woff'), url(../fonts/Tanha.woff2) format('woff2');
 }
