@@ -35,11 +35,11 @@
                         <div class="col-md-3" style="float:left">
                             <div class="card mb-2">
                                 <img class="card-img-top"
-                                     src="{{ 'http://localhost/' . $blog->image }}"
+                                     src="{{ $blog['image'] }}"
                                      alt="Blog Image cap">
                                 <div class="card-body">
-                                    <h4 class="card-title">{{ $blog->title }}</h4>
-                                    <p class="card-text">{{ $blog->description }}</p>
+                                    <h4 class="card-title text-right">{{ $blog['title'] }}</h4>
+                                    <p class="card-text text-justify" dir="rtl">{{ $blog['description'] }}</p>
                                     <a class="btn btn-primary">نمایش</a>
                                 </div>
                             </div>
@@ -51,15 +51,15 @@
 
                 <!--Second slide-->
                 <div class="carousel-item">
-                    @foreach(array_slice($blogs, 0, 4) as $blog)
+                    @foreach(array_slice($blogs, 4, 8) as $blog)
                         <div class="col-md-3" style="float:left">
                             <div class="card mb-2">
                                 <img class="card-img-top"
-                                     src="{{ 'http://localhost/' . $blog->image }}"
+                                     src="{{ $blog['image'] }}"
                                      alt="Blog Image Cap">
                                 <div class="card-body">
-                                    <h4 class="card-title">{{ $blog->title }}</h4>
-                                    <p class="card-text">{{ $blog->description }}</p>
+                                    <h4 class="card-title text-right">{{ $blog['title'] }}</h4>
+                                    <p class="card-text text-justify" dir="rtl">{{ $blog['description'] }}</p>
                                     <a class="btn btn-primary">نمایش</a>
                                 </div>
                             </div>

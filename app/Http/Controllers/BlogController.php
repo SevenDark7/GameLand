@@ -20,10 +20,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::query()->where([
-            ['active', 1],
-            ['status', 1]
-        ])->with(['user', 'likes', 'comments'])->paginate(10);
+        $blogs = Blog::query()->where('active', 1)
+            ->with(['user', 'likes', 'comments'])->paginate(10);
 
         return view('blogs.blog', compact('blogs'));
     }

@@ -6,7 +6,7 @@
     </ul>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <a href="#">
+            <a href="/games">
                 <img src="/images/Slide1.jpg" alt="Favorite" width="100%" height="500">
                 <div class="carousel-caption">
                     <h3>لیست بازی ها</h3>

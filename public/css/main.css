@@ -394,6 +394,18 @@ a, a:hover {
     line-height: 5rem;
 }
 
+.comment {
+    border-bottom: 1px dashed #fff;
+}
+
+.commentSection {
+    font-family: IRANSansWeb;
+}
+
+#addCommentBox {
+    display: none;
+}
+
 /* End Game Styles*/
 
 @font-face {

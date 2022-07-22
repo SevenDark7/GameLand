@@ -16,7 +16,6 @@
                     <p class="lead">{{ $gameInfo->description }}</p>
                 </dvi>
             </div>
-
         </div>
         <div class="col-12 col-md-10 text-light py-4 text-right border single-details border-light my-5" dir="rtl">
             <ul>
@@ -28,5 +27,7 @@
                 </li>
             </ul>
         </div>
+
+        @include('components.games.comment')
     </section>
 @endsection

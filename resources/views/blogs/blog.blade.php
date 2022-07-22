@@ -16,11 +16,13 @@
 
         @foreach($blogs as $blog)
             <div class="card mb-3">
-                <img class="card-img-top" src="{{ 'http://localhost/' . $blog->image }}" alt="Blog Image Cap">
-                <div class="card-body">
-                    <h5 class="card-title">{{ $blog->title }}</h5>
-                    <p class="card-text">{{ $blog->description }}</p>
-                    <p class="card-text"><small class="text-muted">{{ $blog->updated_at }}</small></p>
+                <img class="card-img-top" style="height: 15rem" src="{{ $blog->image }}" alt="Blog Image Cap">
+                <div class="card-body text-right">
+                    <a class="h5 card-title text-right" href="{{ '/blogs/' . $blog->id }}">{{ $blog->title }}</a>
+                    <hr style="background: #011627 !important;">
+                    <p class="card-text text-justify" dir="rtl">{{ $blog->description }}</p>
+                    <p class="card-text text-right"><small class="text-muted">{{ $blog->updated_at }}</small></p>
+                    <a class="btn btn-primary" href="{{ '/blogs/' . $blog->id }}">مشاهده بیشتر</a>
                 </div>
             </div>
         @endforeach

@@ -29,10 +29,8 @@ class HomeController extends Controller
             ['status', 1]
         ])->latest('visit')->limit(7)->get();
 
-        $blogs = Blog::query()->where([
-            ['active', 1],
-            ['status', 1]
-        ])->latest('id')->limit(8)->get()->toArray();
+        $blogs = Blog::where('active', 1)
+            ->latest('id')->limit(8)->get()->toArray();
 
         return view('home.home', compact('recents', 'mosts', 'blogs'));
     }
