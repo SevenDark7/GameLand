@@ -62,7 +62,7 @@ class GameController extends Controller
      */
     public function show(Game $game)
     {
-        $gameInfo = Game::query()->find($game->id);
+        $gameInfo = Game::query()->with(['comments', 'likes'])->find($game->id);
         return view('games.single', compact('gameInfo'));
     }
 

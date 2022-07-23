@@ -1,5 +1,5 @@
 <div class="col-12 col-md-10 commentSection">
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs p-0" dir="rtl">
         <li class="nav-item" id="comments">
             <a class="nav-link text-light" href="#">کامنت ها</a>
         </li>
@@ -8,10 +8,18 @@
         </li>
     </ul>
     <div class="row" id="commentsBox">
-        <div class="col-12 py-3 text-light comment">
-            <h3>Title</h3>
-            <p class="lead">Description</p>
-        </div>
+        @if(count($gameInfo->comments) > 0)
+            @foreach($gameInfo->comments as $comment)
+                <div class="col-12 py-3 text-light comment">
+                    <h3>{{ \Illuminate\Support\Facades\Auth::user()->username }}</h3>
+                    <p class="lead">{{ $comment->description }}</p>
+                </div>
+            @endforeach
+        @else
+            <div class="col-12 py-3 text-light text-center comment">
+                <h3>نظری برای آگهی ثبت نشده است</h3>
+            </div>
+        @endif
     </div>
     <div class="row" id="addCommentBox">
         <div class="col-12 py-3 text-light text-right comment">

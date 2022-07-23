@@ -406,6 +406,21 @@ a, a:hover {
     display: none;
 }
 
+#multi-item-example {
+    font-family: Vazir;
+}
+
+.recent-blog-body {
+
+}
+
+.recent-blog-body .card-text {
+    height: 15rem;
+    max-width: 100%;
+    overflow: clip;
+    text-overflow: ellipsis;
+}
+
 /* End Game Styles*/
 
 @font-face {

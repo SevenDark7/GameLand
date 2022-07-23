@@ -19,7 +19,7 @@ class CreateGameCommentsTable extends Migration
                 ->onDelete('cascade');
             $table->foreignId('user_id')->constrained()
                 ->onDelete('cascade');
-            $table->text('comment');
+            $table->text('description');
             $table->tinyInteger('status')->default(2);
             $table->boolean('active')->default(1);
             $table->string('meta')->nullable();

@@ -13,9 +13,11 @@
 
     <hr class="my-5 bg-light">
 
+
     <!--Carousel Wrapper-->
     @if(count($blogs) > 0)
-        <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+        <div id="multi-item-example" class="carousel text-right slide carousel-multi-item" data-ride="carousel">
+            <h4 class="text-light mb-3" dir="rtl">مطالب اخیر وبلاگ:</h4>
 
             <!--Indicators-->
             <ol class="carousel-indicators">
@@ -30,14 +32,13 @@
 
                 <!--First slide-->
                 <div class="carousel-item active">
-
                     @foreach(array_slice($blogs, 0, 4) as $blog)
                         <div class="col-md-3" style="float:left">
                             <div class="card mb-2">
                                 <img class="card-img-top"
                                      src="{{ $blog['image'] }}"
                                      alt="Blog Image cap">
-                                <div class="card-body">
+                                <div class="card-body recent-blog-body">
                                     <h4 class="card-title text-right">{{ $blog['title'] }}</h4>
                                     <p class="card-text text-justify" dir="rtl">{{ $blog['description'] }}</p>
                                     <a class="btn btn-primary">نمایش</a>
@@ -45,7 +46,6 @@
                             </div>
                         </div>
                     @endforeach
-
                 </div>
                 <!--/.First slide-->
 
@@ -57,7 +57,7 @@
                                 <img class="card-img-top"
                                      src="{{ $blog['image'] }}"
                                      alt="Blog Image Cap">
-                                <div class="card-body">
+                                <div class="card-body recent-blog-body">
                                     <h4 class="card-title text-right">{{ $blog['title'] }}</h4>
                                     <p class="card-text text-justify" dir="rtl">{{ $blog['description'] }}</p>
                                     <a class="btn btn-primary">نمایش</a>
