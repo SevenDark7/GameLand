@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\HomeController;
@@ -18,7 +19,14 @@ use Illuminate\Support\Facades\Validator;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+
+Route::prefix('/')->group(function () {
+    Route::get('/', [HomeController::class, 'index']);
+    Route::get('/login', [AuthController::class, 'login']);
+    Route::get('/register', [AuthController::class, '']);
+    Route::post('/login', [AuthController::class, '']);
+    Route::post('/register', [AuthController::class, '']);
+});
 
 Route::prefix('/blogs')->group(function () {
     Route::get('/', [BlogController::class, 'index']);

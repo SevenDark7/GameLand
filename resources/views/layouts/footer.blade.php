@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="text-center text-white">
+<footer class="text-center text-white bg-custom">
     <!-- Grid container -->
     <div class="container p-4">
         <!-- Section: Text -->
@@ -16,7 +16,7 @@
             <!--Grid row-->
             <div class="row">
                 <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <div class="col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase">دسترسی سریع</h5>
 
                     <ul class="list-unstyled mb-0">
@@ -24,10 +24,10 @@
                             <a href="/" class="text-white">خانه</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white">بازی ها</a>
+                            <a href="/games" class="text-white">بازی ها</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white">بلاگ ها</a>
+                            <a href="/blogs" class="text-white">بلاگ ها</a>
                         </li>
                         <li>
                             <a href="#!" class="text-white">ارتباط با ما</a>
@@ -37,7 +37,7 @@
                 <!--Grid column-->
 
                 <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <div class="col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase">تماس با ما</h5>
 
                     <ul class="list-unstyled mb-0">
@@ -58,45 +58,45 @@
                 <!--Grid column-->
 
                 <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Links</h5>
+{{--                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">--}}
+{{--                    <h5 class="text-uppercase">Links</h5>--}}
 
-                    <ul class="list-unstyled mb-0">
-                        <li>
-                            <a href="#!" class="text-white">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 4</a>
-                        </li>
-                    </ul>
-                </div>
+{{--                    <ul class="list-unstyled mb-0">--}}
+{{--                        <li>--}}
+{{--                            <a href="#!" class="text-white">Link 1</a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a href="#!" class="text-white">Link 2</a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a href="#!" class="text-white">Link 3</a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a href="#!" class="text-white">Link 4</a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
                 <!--Grid column-->
 
                 <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Links</h5>
+{{--                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">--}}
+{{--                    <h5 class="text-uppercase">Links</h5>--}}
 
-                    <ul class="list-unstyled mb-0">
-                        <li>
-                            <a href="#!" class="text-white">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 4</a>
-                        </li>
-                    </ul>
-                </div>
+{{--                    <ul class="list-unstyled mb-0">--}}
+{{--                        <li>--}}
+{{--                            <a href="#!" class="text-white">Link 1</a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a href="#!" class="text-white">Link 2</a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a href="#!" class="text-white">Link 3</a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a href="#!" class="text-white">Link 4</a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
                 <!--Grid column-->
             </div>
             <!--Grid row-->

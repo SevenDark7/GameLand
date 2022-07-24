@@ -9,7 +9,7 @@ body {
 }
 
 section.content {
-    background-color: #011627 !important;
+
 }
 
 article.descrip {
@@ -63,8 +63,9 @@ article.descrip {
     text-overflow: ellipsis;
 }
 
-i {
+.game-col i {
     font-size: .8rem !important;
+    color: #764AF1 !important;
 }
 
 div.home-descrip {
@@ -83,7 +84,6 @@ div.home-descrip {
 }
 
 footer {
-    background: #011627;
     font-family: IRANSansWeb, sans-serif;
 }
 
@@ -97,7 +97,23 @@ footer {
 /* This pen */
 
 .bg-custom {
-    background-color: #011627 !important;
+    background: #764AF1 !important;
+}
+
+.text-custom {
+    color: #764AF1 !important;
+}
+
+.btn-outline-custom {
+    background-color: transparent !important;
+    background-image: none !important;
+    border-color: #764AF1 !important;
+    color: #764AF1 !important;
+}
+
+.btn-outline-custom:hover {
+    background-color: #764AF1 !important;
+    color: white !important;
 }
 
 a, a:hover {
@@ -315,23 +331,23 @@ a, a:hover {
 }
 
 .postcard .postcard__tagbox .blue.play:hover {
-    background: #0076bd;
+    background: #764AF1;
 }
 
 .blue .postcard__title:hover {
-    color: #0076bd;
+    color: #764AF1;
 }
 
 .blue .postcard__bar {
-    background-color: #0076bd;
+    background-color: #764AF1;
 }
 
 .blue::before {
-    background-image: linear-gradient(-30deg, rgba(1, 22, 39, 0.1), transparent 50%);
+    background-image: linear-gradient(-30deg, rgba(76, 9, 178, 0.3), transparent 50%);
 }
 
 .blue:nth-child(2n)::before {
-    background-image: linear-gradient(30deg, rgba(1, 22, 39, 0.1), transparent 50%);
+    background-image: linear-gradient(30deg, rgba(76, 9, 178, 0.3), transparent 50%);
 }
 
 .postcard .postcard__tagbox .red.play:hover {
@@ -347,29 +363,28 @@ a, a:hover {
 }
 
 .red::before {
-    background-image: linear-gradient(-30deg, rgba(189, 21, 11, 0.1), transparent 50%);
+    background-image: linear-gradient(-30deg, rgba(76, 9, 178, 0.3), transparent 50%);
 }
 
 .red:nth-child(2n)::before {
-    background-image: linear-gradient(30deg, rgba(189, 21, 11, 0.1), transparent 50%);
+    background-image: linear-gradient(30deg, rgba(76, 9, 178, 0.3), transparent 50%);
 }
-
 
 @media screen and (min-width: 769px) {
     .blue::before {
-        background-image: linear-gradient(-80deg, rgba(1, 22, 39, 0.3), transparent 50%);
+        background-image: linear-gradient(-80deg, rgba(76, 9, 178, 0.3), transparent 50%);
     }
 
     .blue:nth-child(2n)::before {
-        background-image: linear-gradient(80deg, rgba(1, 22, 39, 0.3), transparent 50%);
+        background-image: linear-gradient(80deg, rgba(76, 9, 178, 0.3), transparent 50%);
     }
 
     .red::before {
-        background-image: linear-gradient(-80deg, rgba(189, 21, 11, 0.1), transparent 50%);
+        background-image: linear-gradient(-80deg, rgba(28, 30, 133,0.3), transparent 50%);
     }
 
     .red:nth-child(2n)::before {
-        background-image: linear-gradient(80deg, rgba(189, 21, 11, 0.1), transparent 50%);
+        background-image: linear-gradient(80deg, rgba(28, 30, 133,0.3), transparent 50%);
     }
 }
 
@@ -379,12 +394,13 @@ a, a:hover {
 }
 
 .single-box {
-    background: rgb(204, 203, 222);
-    background: linear-gradient(45deg, rgba(204, 203, 222, 0.6012605725884104) 0%,
-    rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0.8) 70%, rgba(204, 203, 222, 0.6012605725884104) 100%);
+    background: rgb(76, 9, 178);
+    background: linear-gradient(45deg, rgba(86, 12, 203, 0.6) 0%,
+    rgba(76, 9, 178, 0.8) 30%, rgba(98, 11, 232, 0.8) 70%, rgba(118, 60, 206, 0.84) 100%);
     border-radius: 15px;
     font-family: Vazir;
 }
+
 .single-box > p {
     width: 45rem;
 }

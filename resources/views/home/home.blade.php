@@ -14,7 +14,32 @@
         </div>
     </article>
 
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+        <pre class="h3 text-right" style="overflow: unset" dir="rtl">گیم لند، به راحتی
+جوی استیک روی دستت!!</pre>
+        <p class="lead text-right" dir="rtl">شما میتونید بازی مورد علاقه خودتونو به آسونی توی سایت به مزایده بزارید.
+            چطوری؟ فقط کافیه توی گیم لند ثبت نام کنی و بازی خودتو برای هر کنسولی که هست به فروش بزاری یا دنبال بازی
+            مورد
+            علاقه خودت بگردی
+            تا بتونی بهترین گزینه رو پیدا کنی.</p>
+    </div>
+    <!-- Jumbotron -->
+
+    <hr class="my-5 bg-custom">
+
     @include('components.home.slider')
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+        <pre class="h3 text-right" style="overflow: unset" dir="rtl">گیم لند
+دقیقا چیکار میکنه؟!</pre>
+        <p class="lead text-right" dir="rtl">گیم لند یه یار کمکیه که اومده تا مشکل انتخاب، خرید، فروش، صرفه جویی در زمان، کاهش هزینه ها و هر مشکل دیگه ای که داری رو واست حل کنه
+        تا بتونی با خیال راحت بازی کنی و برنده باشی. پس وقتو تلف نکن، زودتر تروفیارو بگیر که پلات بازی های بعدی که تو ذهنته منتظرته...</p>
+    </div>
+    <!-- Jumbotron -->
+
+    <hr class="my-5 bg-custom">
 
     @include('components.home.recentBlogs')
 
