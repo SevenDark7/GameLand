@@ -426,15 +426,43 @@ a, a:hover {
     font-family: Vazir;
 }
 
-.recent-blog-body {
+a.card-title {
+    color: #000;
+}
 
+a.card-title:hover {
+    color: #764AF1;
+}
+
+.blog-body {
+    height: 15rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    direction: rtl;
+    line-height: 2.5rem;
 }
 
 .recent-blog-body .card-text {
-    height: 15rem;
+    height: 12rem;
     max-width: 100%;
     overflow: clip;
     text-overflow: ellipsis;
+}
+
+.card-deck {
+    font-family: IRANSansWeb;
+}
+
+.single-blog-body {
+    font-family: IRANSansWeb;
+}
+
+.single-blog-body .lead {
+    line-height: 3rem;
+}
+
+.recent-blog-body .card-text {
+    line-height: 2rem;
 }
 
 /* End Game Styles*/

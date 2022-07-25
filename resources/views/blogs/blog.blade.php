@@ -3,28 +3,23 @@
 @section('title', 'Blog')
 
 @section('content')
-    <div class="container py-5">
-
-        @if(count($blogs) < 1)
-            <div class="jumbotron jumbotron-fluid">
-                <div class="container">
-                    <h1 class="display-4 text-center" dir="rtl">محتوایی یافت نشد</h1>
-                    <p class="lead text-center" dir="rtl">متاسفانه داده ای برای نمایش در صفحه مورد نظر وجود ندارد</p>
+    <div class="card-deck my-5">
+        <div class="row" dir="rtl">
+            @foreach($blogs as $blog)
+                <div class="col-12 col-md-4 col-xl-3 mb-5">
+                    <div class="card">
+                        <img class="card-img-top" src="{{ $blog->image }}" alt="Card image cap">
+                        <div class="card-body text-right">
+                            <a class="card-title h5 text-right" href="{{ '/blogs/' . $blog->id }}">{{ $blog->title }}</a>
+                            <p class="card-text blog-body text-justify">{{ $blog->description }}</p>
+                            <a class="btn btn-outline-custom" href="{{ '/blogs/' . $blog->id }}">مشاهده</a>
+                        </div>
+                        <div class="card-footer text-right">
+                            <small class="text-muted text-right">آخرین آپدیت: {{ jdate($blog->updated_at)->ago() }}</small>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        @endif
-
-        @foreach($blogs as $blog)
-            <div class="card mb-3">
-                <img class="card-img-top" style="height: 15rem" src="{{ $blog->image }}" alt="Blog Image Cap">
-                <div class="card-body text-right">
-                    <a class="h5 card-title text-right" href="{{ '/blogs/' . $blog->id }}">{{ $blog->title }}</a>
-                    <hr style="background: #011627 !important;">
-                    <p class="card-text text-justify" dir="rtl">{{ $blog->description }}</p>
-                    <p class="card-text text-right"><small class="text-muted">{{ $blog->updated_at }}</small></p>
-                    <a class="btn btn-primary" href="{{ '/blogs/' . $blog->id }}">مشاهده بیشتر</a>
-                </div>
-            </div>
-        @endforeach
+            @endforeach
+        </div>
     </div>
 @endsection
