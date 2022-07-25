@@ -22,10 +22,10 @@ use Illuminate\Support\Facades\Validator;
 
 Route::prefix('/')->group(function () {
     Route::get('/', [HomeController::class, 'index']);
-    Route::get('/login', [AuthController::class, 'login']);
-    Route::get('/register', [AuthController::class, 'register']);
-    Route::post('/login', [AuthController::class, '']);
-    Route::post('/register', [AuthController::class, '']);
+    Route::get('/login', [AuthController::class, 'loginPage']);
+    Route::get('/register', [AuthController::class, 'registerPage']);
+    Route::post('/login', [AuthController::class, 'login'])->name('login');
+    Route::post('/register', [AuthController::class, 'register'])->name('register');
 });
 
 Route::prefix('/blogs')->group(function () {

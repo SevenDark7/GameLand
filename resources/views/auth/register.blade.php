@@ -11,31 +11,43 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <body>
-<section class="container user-auth h-100 vh-100">
+<section class="container user-auth h-100">
+    @if($errors->all())
+        <div class="alert alert-danger mt-5">
+            <ol class="text-right" dir="rtl">
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ol>
+        </div>
+    @endif
     <div class="row p-5">
         <div class="col-12 col-md-6 p-4 bg-custom">
-            <img class="card-img-top" src="/images/homeFlatImage.png" alt="Login Form">
+            <img class="card-img-top" src="/images/homeFlatImage.png" alt="Register Form">
         </div>
         <div class="col-12 col-md-6 p-4 text-center"
              style="box-shadow: -5px 0 20px rgba(0,0,0,.5) ;border: 1px solid #764AF1;">
-            <form class="text-center mb-5" action="" method="post" dir="rtl">
+            <form class="text-center mb-5" action="{{ route('register') }}" method="POST" dir="rtl">
+                @csrf
                 <div class="form-group text-right">
-                    <label for="phone">تلفن همراه</label>
-                    <input type="tel" name="phone" class="form-control" aria-describedby="phoneHelp"
+                    <label for="mobile">تلفن همراه</label>
+                    <input type="tel" name="mobile" class="form-control" aria-describedby="mobileHelp"
                            placeholder="شماره تلفن خود را وارد کنید">
-                    <small id="phoneHelp" class="form-text text-muted">حریم خصوصی شما برای گیم لند محفوظ میباشد.</small>
+                    <small id="mobileHelp" class="form-text text-muted">حریم خصوصی شما برای گیم لند محفوظ میباشد.</small>
                 </div>
                 <div class="form-group text-right">
                     <label for="username">نام کاربری</label>
                     <input type="text" name="username" class="form-control" aria-describedby="usernameHelp"
                            placeholder="نام کاربری را وارد کنید">
-                    <small id="usernameHelp" class="form-text text-muted">نام کاربری باید انگلیسی و شامل حروف (A-Z) و اعداد (9-0) باشد.</small>
+                    <small id="usernameHelp" class="form-text text-muted">نام کاربری باید انگلیسی و شامل حروف (A-Z) و
+                        اعداد (9-0) باشد.</small>
                 </div>
                 <div class="form-group text-right">
                     <label for="password">رمز عبور</label>
                     <input type="password" name="password" class="form-control" aria-describedby="passwordHelp"
                            placeholder="رمز عبور را وارد کنید">
-                    <small id="passwordHelp" class="form-text text-muted">رمز عبور حداقل باید دارای 6 کاراکتر باشد.</small>
+                    <small id="passwordHelp" class="form-text text-muted">رمز عبور حداقل باید دارای 6 کاراکتر
+                        باشد.</small>
                 </div>
                 <button type="submit" class="btn btn-outline-custom">عضویت در سایت</button>
             </form>
