@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Validator;
 Route::prefix('/')->group(function () {
     Route::get('/', [HomeController::class, 'index']);
     Route::get('/login', [AuthController::class, 'login']);
-    Route::get('/register', [AuthController::class, '']);
+    Route::get('/register', [AuthController::class, 'register']);
     Route::post('/login', [AuthController::class, '']);
     Route::post('/register', [AuthController::class, '']);
 });

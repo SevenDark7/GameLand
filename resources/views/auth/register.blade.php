@@ -20,16 +20,26 @@
              style="box-shadow: -5px 0 20px rgba(0,0,0,.5) ;border: 1px solid #764AF1;">
             <form class="text-center mb-5" action="" method="post" dir="rtl">
                 <div class="form-group text-right">
+                    <label for="phone">تلفن همراه</label>
+                    <input type="tel" name="phone" class="form-control" aria-describedby="phoneHelp"
+                           placeholder="شماره تلفن خود را وارد کنید">
+                    <small id="phoneHelp" class="form-text text-muted">حریم خصوصی شما برای گیم لند محفوظ میباشد.</small>
+                </div>
+                <div class="form-group text-right">
                     <label for="username">نام کاربری</label>
-                    <input type="text" name="username" class="form-control" placeholder="نام کاربری را وارد کنید">
+                    <input type="text" name="username" class="form-control" aria-describedby="usernameHelp"
+                           placeholder="نام کاربری را وارد کنید">
+                    <small id="usernameHelp" class="form-text text-muted">نام کاربری باید انگلیسی و شامل حروف (A-Z) و اعداد (9-0) باشد.</small>
                 </div>
                 <div class="form-group text-right">
                     <label for="password">رمز عبور</label>
-                    <input type="password" name="password" class="form-control" placeholder="رمز عبور را وارد کنید">
+                    <input type="password" name="password" class="form-control" aria-describedby="passwordHelp"
+                           placeholder="رمز عبور را وارد کنید">
+                    <small id="passwordHelp" class="form-text text-muted">رمز عبور حداقل باید دارای 6 کاراکتر باشد.</small>
                 </div>
-                <button type="submit" class="btn btn-outline-custom">ورود به حساب</button>
+                <button type="submit" class="btn btn-outline-custom">عضویت در سایت</button>
             </form>
-            <p>حساب ندارید؟ <a class="text-custom" href="/register">ثبت نام کنید</a></p>
+            <p>قبلا ثبت نام کردید؟ <a class="text-custom" href="/login">وارد شوید</a></p>
         </div>
     </div>
 </section>
