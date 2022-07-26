@@ -6,21 +6,21 @@ use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Pishran\LaravelPersianSlug\HasPersianSlug;
+use Spatie\Sluggable\SlugOptions;
 
 class Blog extends Model
 {
-    use HasFactory, Sluggable;
+    use HasFactory, HasPersianSlug;
 
 
     protected $guarded = [];
 
-    public function sluggable(): array
+    public function getSlugOptions(): SlugOptions
     {
-        return [
-            'slug' => [
-                'source' => 'title'
-            ]
-        ];
+        return SlugOptions::create()
+            ->generateSlugsFrom('title')
+            ->saveSlugsTo('slug');
     }
 
     public function user()

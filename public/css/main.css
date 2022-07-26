@@ -477,6 +477,17 @@ a.card-title:hover {
     font-family: IRANSansWeb;
 }
 
+.gamesBox {
+    border: 1px solid #764AF1;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+
+.gamesBox i {
+    color: #764AF1;
+    font-size: .8rem;
+}
+
 /* End Game Styles*/
 
 @font-face {

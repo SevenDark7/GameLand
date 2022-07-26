@@ -18,8 +18,6 @@ class CreateGamesTable extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->string('platform')->nullable();
-            $table->string('release')->nullable();
-            $table->string('publisher')->nullable();
             $table->string('genre')->nullable();
             $table->longText('description')->nullable();
             $table->text('address')->nullable();
@@ -27,8 +25,8 @@ class CreateGamesTable extends Migration
             $table->string('price')->default(0);
             $table->foreignId('user_id')->constrained()
                 ->onDelete('cascade');
-//            $table->foreignId('city_id')->constrained()
-//                ->onUpdate('cascade');
+            $table->foreignId('city_id')->constrained()
+                ->onUpdate('cascade');
             $table->unsignedBigInteger('visit')->default(0);
             $table->tinyInteger('status')->default(2);
             $table->boolean('active')->default(1);

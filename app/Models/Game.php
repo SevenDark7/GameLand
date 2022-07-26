@@ -7,20 +7,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Pishran\LaravelPersianSlug\HasPersianSlug;
+use Spatie\Sluggable\SlugOptions;
 
 class Game extends Model
 {
-    use HasFactory, Sluggable;
+    use HasFactory, HasPersianSlug;
 
     protected $guarded = [];
 
-    public function sluggable(): array
+    public function getSlugOptions(): SlugOptions
     {
-        return [
-            'slug' => [
-                'source' => 'name'
-            ]
-        ];
+        return SlugOptions::create()
+            ->generateSlugsFrom('name')
+            ->saveSlugsTo('slug');
     }
 
     public function user(): BelongsTo
@@ -36,5 +36,10 @@ class Game extends Model
     public function comments(): HasMany
     {
         return $this->hasMany(GameComment::class);
+    }
+
+    public function city()
+    {
+        return $this->belongsTo(City::class);
     }
 }

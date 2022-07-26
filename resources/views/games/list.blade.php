@@ -8,12 +8,12 @@
         @foreach($games as $key => $game)
             @if($key % 2 == 0)
                 <article class="postcard light blue">
-                    <a class="postcard__img_link" href="{{ '/games/' . $game->id }}">
+                    <a class="postcard__img_link" href="{{ '/games/' . $game->slug }}">
                         <img class="postcard__img" src="https://picsum.photos/1000/1000" alt="Image Title"/>
                     </a>
                     <div class="postcard__text t-dark text-right" dir="rtl">
                         <h1 class="postcard__title blue"><a
-                                href="{{ '/games/' . $game->id }}">{{ $game->name }}</a>
+                                href="{{ '/games/' . $game->slug }}">{{ $game->name }}</a>
                         </h1>
                         <div class="postcard__subtitle small">
                             <time datetime="2020-05-25 12:00:00">
@@ -35,11 +35,11 @@
                 </article>
             @else
                 <article class="postcard light blue">
-                    <a class="postcard__img_link" href="{{ '/games/' . $game->id }}">
+                    <a class="postcard__img_link" href="{{ '/games/' . $game->slug }}">
                         <img class="postcard__img" src="https://picsum.photos/501/500" alt="Image Title"/>
                     </a>
                     <div class="postcard__text t-dark text-right" dir="rtl">
-                        <h1 class="postcard__title blue"><a href="{{ '/games/' . $game->id }}">{{ $game->name }}</a>
+                        <h1 class="postcard__title blue"><a href="{{ '/games/' . $game->slug }}">{{ $game->name }}</a>
                         </h1>
                         <div class="postcard__subtitle small">
                             <time datetime="2020-05-25 12:00:00">

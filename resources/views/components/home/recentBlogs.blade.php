@@ -25,9 +25,9 @@
                                          src="{{ $blog['image'] }}"
                                          alt="Blog Image cap">
                                     <div class="card-body recent-blog-body text-right">
-                                        <a class="card-title h5" href="{{ '/blogs/' . $blog['id'] }}">{{ $blog['title'] }}</a>
+                                        <a class="card-title h5" href="{{ '/blogs/' . $blog['slug'] }}">{{ $blog['title'] }}</a>
                                         <p class="card-text text-justify" dir="rtl">{{ $blog['description'] }}</p>
-                                        <a class="btn btn-outline-custom btn-floating" href="{{ '/blogs/' . $blog['id'] }}">نمایش</a>
+                                        <a class="btn btn-outline-custom btn-floating" href="{{ '/blogs/' . $blog['slug'] }}">نمایش</a>
                                     </div>
                                 </div>
                             </div>
@@ -44,9 +44,9 @@
                                          src="{{ $blog['image'] }}"
                                          alt="Blog Image Cap">
                                     <div class="card-body recent-blog-body text-right">
-                                        <a class="card-title h5" href="{{ '/blogs/' . $blog['id'] }}">{{ $blog['title'] }}</a>
+                                        <a class="card-title h5" href="{{ '/blogs/' . $blog['slug'] }}">{{ $blog['title'] }}</a>
                                         <p class="card-text text-justify" dir="rtl">{{ $blog['description'] }}</p>
-                                        <a class="btn btn-outline-custom btn-floating" href="{{ '/blogs/' . $blog['id'] }}">نمایش</a>
+                                        <a class="btn btn-outline-custom btn-floating" href="{{ '/blogs/' . $blog['slug'] }}">نمایش</a>
                                     </div>
                                 </div>
                             </div>
