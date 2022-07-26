@@ -469,6 +469,14 @@ a.card-title:hover {
     font-family: Vazir;
 }
 
+#navbarTogglerDemo03 span a {
+    font-family: Vazir;
+}
+
+.user-panel {
+    font-family: IRANSansWeb;
+}
+
 /* End Game Styles*/
 
 @font-face {

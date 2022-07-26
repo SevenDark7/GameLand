@@ -12,6 +12,7 @@ use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
+
     public function loginPage()
     {
         return view('auth.login');
@@ -36,6 +37,7 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
         $request->session()->regenerate();
+
         $recents = Game::query()->where([
             ['active', 1],
             ['status', 1]
@@ -49,7 +51,8 @@ class AuthController extends Controller
         $blogs = Blog::where('active', 1)
             ->latest('id')->limit(8)->get()->toArray();
 
-        return view('home.home', compact('recents', 'mosts', 'blogs'));    }
+        return view('home.home', compact('recents', 'mosts', 'blogs'));
+    }
 
     public function login(Request $request)
     {
@@ -60,6 +63,7 @@ class AuthController extends Controller
 
         if (Auth::attempt(['username' => $request->username, 'password' => $request->password, 'active' => 1])) {
             $request->session()->regenerate();
+
             $recents = Game::query()->where([
                 ['active', 1],
                 ['status', 1]
@@ -79,5 +83,24 @@ class AuthController extends Controller
         throw ValidationException::withMessages([
             'username' => 'نام کاربری یا رمز عبور صحیح نمیباشد.'
         ]);
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        $recents = Game::query()->where([
+            ['active', 1],
+            ['status', 1]
+        ])->latest('id')->limit(7)->get();
+
+        $mosts = Game::query()->where([
+            ['active', 1],
+            ['status', 1]
+        ])->latest('visit')->limit(7)->get();
+
+        $blogs = Blog::where('active', 1)
+            ->latest('id')->limit(8)->get()->toArray();
+
+        return view('home.home', compact('recents', 'mosts', 'blogs'));
     }
 }

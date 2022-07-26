@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Game;
 use Illuminate\Support\Facades\Validator;
@@ -24,6 +25,7 @@ Route::prefix('/')->group(function () {
     Route::get('/', [HomeController::class, 'index']);
     Route::get('/login', [AuthController::class, 'loginPage']);
     Route::get('/register', [AuthController::class, 'registerPage']);
+    Route::get('/logout', [AuthController::class, 'logout']);
     Route::post('/login', [AuthController::class, 'login'])->name('login');
     Route::post('/register', [AuthController::class, 'register'])->name('register');
 });
@@ -31,6 +33,10 @@ Route::prefix('/')->group(function () {
 Route::prefix('/blogs')->group(function () {
     Route::get('/', [BlogController::class, 'index']);
     Route::get('/{blog}', [BlogController::class, 'show']);
+});
+
+Route::prefix('profile')->middleware('auth')->group(function () {
+    Route::get('/', [UserController::class, 'profile']);
 });
 
 Route::prefix('/games')->group(function () {
@@ -41,7 +47,7 @@ Route::prefix('/games')->group(function () {
 
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {
-        return view('admin.login');
+        return view('admin.articles.panel');
     });
 
     Route::get('/articles/comments', function () {
