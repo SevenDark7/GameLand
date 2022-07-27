@@ -159,6 +159,7 @@ return [
         "password" => "رمز عبور",
         "password_confirmation" => "تاییدیه ی رمز عبور",
         "city" => "شهر",
+        "city_id" => "شهر",
         "country" => "کشور",
         "address" => "نشانی",
         "phone" => "تلفن",
@@ -182,6 +183,9 @@ return [
         "available" => "موجود",
         "size" => "اندازه",
 		"file" => "فایل",
-		"fullname" => "نام کامل"
+		"fullname" => "نام کامل",
+		"platform" => "پلتفرم",
+		"image" => "عکس",
+		"price" => "قیمت",
     ],
 ];

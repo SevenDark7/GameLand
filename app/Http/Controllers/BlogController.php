@@ -65,7 +65,7 @@ class BlogController extends Controller
             'meta' => $request->meta,
         ]);
 
-        return back();
+        return redirect()->back();
     }
 
     /**

@@ -3,6 +3,15 @@
 
 @section('content')
     <section class="container py-5">
+        @if($errors->all())
+            <div class="alert alert-danger mt-5">
+                <ol class="text-right" dir="rtl">
+                    @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ol>
+            </div>
+        @endif
         <div class="row my-5 user-panel" dir="rtl">
             <div class="col-12 col-xl-3 bg-custom">
                 <a class="d-block text-right text-light py-3 border-bottom" href="#" id="addGame">افزودن آگهی</a>

@@ -4,6 +4,7 @@
     </div>
     <div class="col-12">
         <form action="/games" method="post" enctype="multipart/form-data">
+            @csrf
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="name">نام بازی</label>
@@ -28,7 +29,7 @@
                     <input type="number" class="form-control" name="price">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="city">شهرستان</label>
+                    <label for="city_id">شهرستان</label>
                     <select class="form-control selectpicker border" name="city_id" data-live-search="true">
                         <option hidden value="">شهر فروش بازی را انتخاب کنید</option>
                         @foreach($cities as $city)

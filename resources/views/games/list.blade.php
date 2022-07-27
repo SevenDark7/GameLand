@@ -9,7 +9,7 @@
             @if($key % 2 == 0)
                 <article class="postcard light blue">
                     <a class="postcard__img_link" href="{{ '/games/' . $game->slug }}">
-                        <img class="postcard__img" src="https://picsum.photos/1000/1000" alt="Image Title"/>
+                        <img class="postcard__img" src="{{ $game->image ? env('APP_URL') . $game->image : 'https://picsum.photos/1000/1000' }}" alt="Image Title"/>
                     </a>
                     <div class="postcard__text t-dark text-right" dir="rtl">
                         <h1 class="postcard__title blue"><a
@@ -36,7 +36,7 @@
             @else
                 <article class="postcard light blue">
                     <a class="postcard__img_link" href="{{ '/games/' . $game->slug }}">
-                        <img class="postcard__img" src="https://picsum.photos/501/500" alt="Image Title"/>
+                        <img class="postcard__img" src="{{ $game->image ? env('APP_URL') . $game->image : 'https://picsum.photos/1000/1000' }}" alt="Image Title"/>
                     </a>
                     <div class="postcard__text t-dark text-right" dir="rtl">
                         <h1 class="postcard__title blue"><a href="{{ '/games/' . $game->slug }}">{{ $game->name }}</a>

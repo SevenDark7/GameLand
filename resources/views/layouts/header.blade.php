@@ -21,8 +21,9 @@
                 <a class="nav-link" href="/contact-us">تماس با ما</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control ml-sm-2" type="search" placeholder="جستجو" aria-label="Search">
+        <form action="/games" method="get" class="form-inline my-2 my-lg-0">
+            @csrf
+            <input class="form-control ml-sm-2" type="search" name="search" autocomplete="off" placeholder="جستجو" aria-label="Search">
             <button class="btn btn-outline-light my-2 my-sm-0" type="submit">جستجو</button>
         </form>
         @if(\Illuminate\Support\Facades\Auth::check())

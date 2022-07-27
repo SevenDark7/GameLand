@@ -12,13 +12,21 @@ use Illuminate\Support\Facades\Auth;
 
 class GameController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      * @return Application|Factory|View
      */
-    public function index()
+    public function index(Request $request)
     {
-        $games = Game::query()->where([
+        $request->validate([
+            'search' => ['sometimes']
+        ]);
+
+        $games = Game::query()->when(isset($request->search), function ($query) use ($request) {
+            $query->where('name', 'LIKE', '%' . $request->search . '%')
+                ->orWhere('description', 'LIKE', '%' . $request->search . '%');
+        })->where([
             ['active', 1],
             ['status', 1]
         ])->latest('id')->get();
@@ -49,14 +57,16 @@ class GameController extends Controller
             'genre' => ['nullable'],
             'description' => ['nullable'],
             'address' => ['required'],
-            'image' => ['required','image','mimes:jpeg,png,jpg'],
+            'image' => ['required', 'image', 'mimes:jpeg,png,jpg'],
             'price' => ['required'],
             'city_id' => ['required'],
         ]);
+
         if ($request->hasFile('image')) {
             $uploadedFile = $request->file('image');
             $fileName = time() . '.' . $uploadedFile->getClientOriginalExtension();
-            $request->image = $uploadedFile->storePubliclyAs('/images', $fileName);
+            $uploadedFile->move(public_path('/gameImages'), $fileName);
+            $request->image = 'gameImages/' . $fileName;
         }
 
         Game::create([

@@ -33,6 +33,7 @@ Route::prefix('/')->group(function () {
 Route::prefix('/blogs')->group(function () {
     Route::get('/', [BlogController::class, 'index']);
     Route::get('/{blog}', [BlogController::class, 'show']);
+    Route::post('/', [BlogController::class, 'store']);
 });
 
 Route::prefix('profile')->middleware('auth')->group(function () {
@@ -42,6 +43,7 @@ Route::prefix('profile')->middleware('auth')->group(function () {
 Route::prefix('/games')->group(function () {
     Route::get('/', [GameController::class, 'index']);
     Route::get('/{game}', [GameController::class, 'show']);
+    Route::post('/', [GameController::class, 'store']);
 });
 
 
