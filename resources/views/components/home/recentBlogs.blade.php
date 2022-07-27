@@ -3,7 +3,8 @@
         <!--Carousel Wrapper-->
         @if(count($blogs) > 0)
             <div id="multi-item-example" class="carousel text-right slide carousel-multi-item" data-ride="carousel">
-                <h4 class="text-light mb-3" dir="rtl">مطالب اخیر وبلاگ:</h4>
+                <h3 class="text-light mb-3" dir="rtl">مطالب اخیر وبلاگ:</h3>
+                <p class="text-light lead mb-3" dir="rtl">مطالب اخیر وبلاگ را از اینجا دنبال کنید</p>
 
                 <!--Indicators-->
                 <ol class="carousel-indicators">

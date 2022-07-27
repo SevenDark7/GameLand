@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\GameActionController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
@@ -44,6 +45,9 @@ Route::prefix('/games')->group(function () {
     Route::get('/', [GameController::class, 'index']);
     Route::get('/{game}', [GameController::class, 'show']);
     Route::post('/', [GameController::class, 'store']);
+    Route::prefix('comment')->group(function () {
+        Route::post('/', [GameActionController::class, 'addComment']);
+    });
 });
 
 

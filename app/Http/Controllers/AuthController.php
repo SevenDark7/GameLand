@@ -2,16 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use App\Notifications\RegistrationSuccessful;
+use App\Repositories\AuthRepository;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
+
+    protected $authRipo;
+
+    public function __construct()
+    {
+        $this->authRipo = resolve(AuthRepository::class);
+    }
 
     public function loginPage()
     {
@@ -31,16 +35,11 @@ class AuthController extends Controller
             'password' => ['required', 'min:6', 'max:20'],
         ]);
 
-        User::create([
-            'mobile' => $request->mobile,
-            'username' => $request->username,
-            'password' => Hash::make($request->password),
-        ])->notify(new RegistrationSuccessful());
+        $this->authRipo->register($request);
 
-        if (Auth::attempt(['username' => $request->username, 'password' => $request->password, 'active' => 1])) {
+        if ($this->authRipo->login($request)) {
             $request->session()->regenerate();
         }
-
         return redirect()->to('/');
     }
 
@@ -51,7 +50,7 @@ class AuthController extends Controller
             'password' => ['required'],
         ]);
 
-        if (Auth::attempt(['username' => $request->username, 'password' => $request->password, 'active' => 1])) {
+        if ($this->authRipo->login($request)) {
             $request->session()->regenerate();
             return redirect()->to('/');
         }
@@ -63,7 +62,7 @@ class AuthController extends Controller
 
     public function logout(): RedirectResponse
     {
-        Auth::logout();
+        $this->authRipo->logout();
         return redirect()->to('/');
     }
 }
