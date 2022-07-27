@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Blog;
-use App\Models\Game;
 use App\Models\User;
+use App\Notifications\RegistrationSuccessful;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -23,7 +23,7 @@ class AuthController extends Controller
         return view('auth.register');
     }
 
-    public function register(Request $request)
+    public function register(Request $request): RedirectResponse
     {
         $request->validate([
             'mobile' => ['required', 'min:11', 'max:11', 'regex:/(09)[0-9]{9}/', 'unique:users'],
@@ -35,26 +35,16 @@ class AuthController extends Controller
             'mobile' => $request->mobile,
             'username' => $request->username,
             'password' => Hash::make($request->password),
-        ]);
-        $request->session()->regenerate();
+        ])->notify(new RegistrationSuccessful());
 
-        $recents = Game::query()->where([
-            ['active', 1],
-            ['status', 1]
-        ])->latest('id')->limit(7)->get();
+        if (Auth::attempt(['username' => $request->username, 'password' => $request->password, 'active' => 1])) {
+            $request->session()->regenerate();
+        }
 
-        $mosts = Game::query()->where([
-            ['active', 1],
-            ['status', 1]
-        ])->latest('visit')->limit(7)->get();
-
-        $blogs = Blog::where('active', 1)
-            ->latest('id')->limit(8)->get()->toArray();
-
-        return view('home.home', compact('recents', 'mosts', 'blogs'));
+        return redirect()->to('/');
     }
 
-    public function login(Request $request)
+    public function login(Request $request): RedirectResponse
     {
         $request->validate([
             'username' => ['required'],
@@ -63,21 +53,7 @@ class AuthController extends Controller
 
         if (Auth::attempt(['username' => $request->username, 'password' => $request->password, 'active' => 1])) {
             $request->session()->regenerate();
-
-            $recents = Game::query()->where([
-                ['active', 1],
-                ['status', 1]
-            ])->latest('id')->limit(7)->get();
-
-            $mosts = Game::query()->where([
-                ['active', 1],
-                ['status', 1]
-            ])->latest('visit')->limit(7)->get();
-
-            $blogs = Blog::where('active', 1)
-                ->latest('id')->limit(8)->get()->toArray();
-
-            return view('home.home', compact('recents', 'mosts', 'blogs'));
+            return redirect()->to('/');
         }
 
         throw ValidationException::withMessages([
@@ -85,22 +61,9 @@ class AuthController extends Controller
         ]);
     }
 
-    public function logout()
+    public function logout(): RedirectResponse
     {
         Auth::logout();
-        $recents = Game::query()->where([
-            ['active', 1],
-            ['status', 1]
-        ])->latest('id')->limit(7)->get();
-
-        $mosts = Game::query()->where([
-            ['active', 1],
-            ['status', 1]
-        ])->latest('visit')->limit(7)->get();
-
-        $blogs = Blog::where('active', 1)
-            ->latest('id')->limit(8)->get()->toArray();
-
-        return view('home.home', compact('recents', 'mosts', 'blogs'));
+        return redirect()->to('/');
     }
 }

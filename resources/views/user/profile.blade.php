@@ -16,6 +16,8 @@
 
                 @include('components.user.profile.userGames')
 
+                @include('components.user.profile.setting')
+
             </div>
         </div>
     </section>

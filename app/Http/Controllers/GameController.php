@@ -8,6 +8,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class GameController extends Controller
 {
@@ -38,21 +39,39 @@ class GameController extends Controller
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @return Application|Factory|View
+     * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'image' => ['required','image','mimes:jpeg,png,jpg']
+            'name' => ['required', 'min:3'],
+            'platform' => ['required'],
+            'genre' => ['nullable'],
+            'description' => ['nullable'],
+            'address' => ['required'],
+            'image' => ['required','image','mimes:jpeg,png,jpg'],
+            'price' => ['required'],
+            'city_id' => ['required'],
         ]);
-
         if ($request->hasFile('image')) {
             $uploadedFile = $request->file('image');
             $fileName = time() . '.' . $uploadedFile->getClientOriginalExtension();
             $request->image = $uploadedFile->storePubliclyAs('/images', $fileName);
         }
 
-        return view('games.list');
+        Game::create([
+            'name' => $request->name,
+            'platform' => $request->platform,
+            'genre' => $request->genre,
+            'description' => $request->description,
+            'address' => $request->address,
+            'image' => $request->image,
+            'price' => $request->price,
+            'city_id' => $request->city_id,
+            'user_id' => Auth::id(),
+        ]);
+
+        return redirect()->to('/games');
     }
 
     /**
