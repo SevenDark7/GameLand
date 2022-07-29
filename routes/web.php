@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BlogActionController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\GameActionController;
 use App\Http\Controllers\GameController;
@@ -24,6 +25,8 @@ use Illuminate\Support\Facades\Validator;
 
 Route::prefix('/')->group(function () {
     Route::get('/', [HomeController::class, 'index']);
+    Route::get('/about', [HomeController::class, 'about']);
+    Route::get('/contact-us', [HomeController::class, 'contact']);
     Route::get('/login', [AuthController::class, 'loginPage']);
     Route::get('/register', [AuthController::class, 'registerPage']);
     Route::get('/logout', [AuthController::class, 'logout']);
@@ -35,6 +38,9 @@ Route::prefix('/blogs')->group(function () {
     Route::get('/', [BlogController::class, 'index']);
     Route::get('/{blog}', [BlogController::class, 'show']);
     Route::post('/', [BlogController::class, 'store']);
+    Route::prefix('comment')->group(function () {
+        Route::post('/', [BlogActionController::class, 'addComment']);
+    });
 });
 
 Route::prefix('profile')->middleware('auth')->group(function () {

@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\GameComment;
-use App\Models\User;
 use App\Repositories\AuthRepository;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
 class GameActionController extends Controller

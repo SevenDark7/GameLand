@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Singe-Game')
+@section('title', 'Game')
 
 @section('content')
     <section class="row justify-content-center py-5">
@@ -17,18 +17,22 @@
                 </dvi>
             </div>
         </div>
-        <div class="col-12 py-4 text-right text-light bg-custom single-details my-5" dir="rtl">
-            <ul>
-                <li>
-                    <h2>{{ $gameInfo->name }}</h2>
-                </li>
-                <li>
-                    <p class="lead">{{ $gameInfo->description }}</p>
-                </li>
-                <li>
-                    <p class="lead">قیمت: {{ number_format($gameInfo->price) }} تومان</p>
-                </li>
-            </ul>
+        <div class="col-12 py-4 text-right text-light bg-custom single-details mt-5" dir="rtl">
+            <div class="container">
+                <h2>{{ $gameInfo->name }}</h2>
+            </div>
+        </div>
+        <div class="col-12 py-4 text-right text-dark single-details mb-5" dir="rtl">
+            <div class="container">
+                <ul>
+                    <li>
+                        <p class="lead">{{ $gameInfo->description }}</p>
+                    </li>
+                    <li>
+                        <p class="lead">قیمت: {{ number_format($gameInfo->price) }} تومان</p>
+                    </li>
+                </ul>
+            </div>
         </div>
 
         @include('components.games.comment')

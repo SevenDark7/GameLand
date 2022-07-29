@@ -27,16 +27,6 @@ class BlogController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create(): Response
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param Request $request
@@ -74,7 +64,9 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        $blogInfo = Blog::query()->with(['user', 'likes', 'comments'])->find($blog->id);
+        $blogInfo = Blog::query()->with(['user', 'likes', 'comments' => function($query) {
+            $query->where([['status', 1], ['active', 1]]);
+        }])->find($blog->id);
 
         $blogs = Blog::query()->where([['active', 1], ['id', '!=', $blog->id]])->where(function ($query) use ($blog) {
             $query->where('title', 'LIKE', '%' . $blog->title . '%')->orWhere('description', 'LIKE', '%' . $blog->title . '%');
