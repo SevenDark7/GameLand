@@ -21,5 +21,25 @@
                 <img class="card-img-top" src="/images/about/aboutTwo.gif" alt="GameShop">
             </div>
         </div>
+        <div class="row aline-items-center text-custom justify-content-between border p-4 mx-2 mb-5">
+            <div class="col-12 text-center mb-3">
+                <h3>چرا گیم لند؟</h3>
+            </div>
+            <div class="col-12 col-md-3 mx-2 border-top border-left border-info">
+                <div class="row justify-content-center p-5 my-5 aline-items-center border-bottom border-right border-primary">
+                    <h3>دسترسی راحت</h3>
+                </div>
+            </div>
+            <div class="col-12 col-md-3 mx-2 border-top border-bottom border-info">
+                <div class="row justify-content-center p-5 my-5 aline-items-center border-left border-right border-primary">
+                    <h3>صرفه جویی درزمان</h3>
+                </div>
+            </div>
+            <div class="col-12 col-md-3 mx-2 border-top border-right border-info">
+                <div class="row justify-content-center p-5 my-5 aline-items-center border-bottom border-left border-primary">
+                    <h3>قابل اعتماد</h3>
+                </div>
+            </div>
+        </div>
     </section>
 @endsection
