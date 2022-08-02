@@ -30,7 +30,7 @@
                             <a href="/blogs" class="text-white">بلاگ ها</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white">ارتباط با ما</a>
+                            <a href="/contact-us" class="text-white">ارتباط با ما</a>
                         </li>
                     </ul>
                 </div>
@@ -45,7 +45,7 @@
                             <a href="tel:+989335136797" class="text-white">تلفن: 6797 513 0933</a>
                         </li>
                         <li>
-                            <a href="#" class="text-white">آدرس: اصفهان، خیابان بهشت</a>
+                            <a href="#" class="text-white">آدرس: اصفهان، خیابان کاوه</a>
                         </li>
                         <li>
                             <a href="mailto:SevenEncoder@gmail.com" class="text-white">SevenEncoder@gmail.com :ایمیل</a>

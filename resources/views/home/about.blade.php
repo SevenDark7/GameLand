@@ -2,7 +2,7 @@
 
 @section('title', 'About')
 @section('content')
-    <section class="about-wrapper py-5 py-md-0">
+    <section class="wrapper py-5 py-md-0">
         <div class="row align-items-center">
             <div class="col-12 col-md-8 text-right" dir="rtl">
                 <h3 class="text-custom">درباره گیم لند</h3>
