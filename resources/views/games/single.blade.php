@@ -22,15 +22,29 @@
                 <h2>{{ $gameInfo->name }}</h2>
             </div>
         </div>
-        <div class="col-12 py-4 text-right text-dark single-details mb-5" dir="rtl">
+        <div class="col-12 py-4 text-right text-dark game-single-details mb-5" dir="rtl">
             <div class="container">
-                <ul>
+                <ul class="p-0">
                     <li>
-                        <p class="lead">{{ $gameInfo->description }}</p>
+                        <h4 class="py-3 text-custom">توضیحات</h4>
                     </li>
+                    <p class="lead">{{ $gameInfo->description }}</p>
+                    <hr class="bg-custom">
                     <li>
-                        <p class="lead">قیمت: {{ number_format($gameInfo->price) }} تومان</p>
+                        <h4 class="py-3 text-custom">پلتفرم</h4>
                     </li>
+                    <p class="lead">{{ $gameInfo->platform }}</p>
+                    <hr class="bg-custom">
+                    <li>
+                        <h4 class="py-3 text-custom">شهرستان</h4>
+                    </li>
+                    <p class="lead">{{ $gameInfo->city->name . ' (' . $gameInfo->city->province->name . ')' }}</p>
+                    <hr class="bg-custom">
+                    <li>
+                        <h4 class="py-3 text-custom">قیمت</h4>
+                    </li>
+                    <p class="lead">{{ number_format($gameInfo->price) }} ریال</p>
+                    <hr class="bg-custom">
                 </ul>
             </div>
         </div>

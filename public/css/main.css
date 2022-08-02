@@ -405,7 +405,12 @@ a, a:hover {
     width: 45rem;
 }
 
-.single-details {
+.game-single-details {
+    font-family: IRANSansWeb;
+    line-height: 2rem;
+}
+
+.blog-single-details {
     font-family: IRANSansWeb;
     line-height: 3.5rem;
 }

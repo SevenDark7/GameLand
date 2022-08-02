@@ -38,7 +38,7 @@ class Game extends Model
         return $this->hasMany(GameComment::class);
     }
 
-    public function city()
+    public function city(): BelongsTo
     {
         return $this->belongsTo(City::class);
     }

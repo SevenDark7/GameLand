@@ -93,7 +93,7 @@ class GameController extends Controller
     {
         $gameInfo = Game::query()->with(['comments' => function($query) {
             $query->where([['active', 1], ['status', 1]]);
-        }, 'likes'])->find($game->id);
+        }, 'likes', 'city'])->find($game->id);
         return view('games.single', compact('gameInfo'));
     }
 

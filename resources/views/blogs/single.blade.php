@@ -15,12 +15,12 @@
 
             <img class="card-img-top" style="height: 20rem" src="{{ $blogInfo->image }}">
         </div>
-        <div class="col-12 py-4 text-right text-light bg-custom single-details mt-5" dir="rtl">
+        <div class="col-12 py-4 text-right text-light bg-custom blog-single-details mt-5" dir="rtl">
             <div class="container">
                 <h2>{{ $blogInfo->title }}</h2>
             </div>
         </div>
-        <div class="col-12 py-4 text-right text-dark single-details mb-5" dir="rtl">
+        <div class="col-12 py-4 text-right text-dark blog-single-details mb-5" dir="rtl">
             <div class="container">
                 <p class="lead text-justify" dir="rtl">{{ $blogInfo->description }}</p>
             </div>
