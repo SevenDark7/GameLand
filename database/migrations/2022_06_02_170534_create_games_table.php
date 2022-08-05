@@ -19,6 +19,8 @@ class CreateGamesTable extends Migration
             $table->string('slug')->unique();
             $table->string('platform')->nullable();
             $table->string('genre')->nullable();
+            $table->string('release')->nullable();
+            $table->string('publisher')->nullable();
             $table->longText('description')->nullable();
             $table->text('address')->nullable();
             $table->string('image')->nullable();

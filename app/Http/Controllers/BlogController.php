@@ -21,7 +21,7 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = Blog::query()->where('active', 1)
-            ->with(['user', 'likes', 'comments'])->paginate(10);
+            ->with(['user', 'likes', 'comments'])->latest('id')->paginate(10);
 
         return view('blogs.blog', compact('blogs'));
     }

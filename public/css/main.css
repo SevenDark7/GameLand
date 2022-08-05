@@ -502,6 +502,10 @@ a.card-title:hover {
     line-height: 2.5rem;
 }
 
+.bootstrap-select .filter-option {
+    text-align: right !important;
+}
+
 /* End Game Styles*/
 
 @font-face {

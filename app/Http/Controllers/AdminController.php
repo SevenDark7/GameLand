@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\City;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -36,6 +37,7 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        return view('admin.articles.panel');
+        $cities = City::all();
+        return view('admin.articles.panel', compact('cities'));
     }
 }

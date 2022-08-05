@@ -27,11 +27,13 @@ class GameController extends Controller
         $games = Game::query()->where([['active', 1], ['status', 1]])
             ->when(isset($request->search), function ($query) use ($request) {
                 $query->where('name', 'LIKE', '%' . $request->search . '%')
-                    ->orWhere('description', 'LIKE', '%' . $request->search . '%')->latest('id');
+                    ->orWhere('description', 'LIKE', '%' . $request->search . '%');
             })->when(isset($request->order), function ($query) use ($request) {
                 if ($request->order == 'visit') {
                     $query->latest('visit');
                 }
+            })->when(!isset($request->order), function ($query) {
+                $query->latest('id');
             })->get();
 
         return view('games.list', compact('games'));
@@ -53,6 +55,7 @@ class GameController extends Controller
             'address' => ['required'],
             'image' => ['required', 'image', 'mimes:jpeg,png,jpg'],
             'price' => ['required'],
+            'status' => ['sometimes'],
             'city_id' => ['required'],
         ]);
 
@@ -72,6 +75,7 @@ class GameController extends Controller
             'image' => $request->image,
             'price' => $request->price,
             'city_id' => $request->city_id,
+            'status' => $request->status ?: 2,
             'user_id' => Auth::id(),
         ]);
 
