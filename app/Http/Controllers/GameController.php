@@ -20,27 +20,21 @@ class GameController extends Controller
     public function index(Request $request)
     {
         $request->validate([
-            'search' => ['sometimes']
+            'search' => ['sometimes'],
+            'order' => ['sometimes'],
         ]);
 
-        $games = Game::query()->when(isset($request->search), function ($query) use ($request) {
-            $query->where('name', 'LIKE', '%' . $request->search . '%')
-                ->orWhere('description', 'LIKE', '%' . $request->search . '%');
-        })->where([
-            ['active', 1],
-            ['status', 1]
-        ])->latest('id')->get();
+        $games = Game::query()->where([['active', 1], ['status', 1]])
+            ->when(isset($request->search), function ($query) use ($request) {
+                $query->where('name', 'LIKE', '%' . $request->search . '%')
+                    ->orWhere('description', 'LIKE', '%' . $request->search . '%')->latest('id');
+            })->when(isset($request->order), function ($query) use ($request) {
+                if ($request->order == 'visit') {
+                    $query->latest('visit');
+                }
+            })->get();
 
         return view('games.list', compact('games'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -91,7 +85,8 @@ class GameController extends Controller
      */
     public function show(Game $game)
     {
-        $gameInfo = Game::query()->with(['comments' => function($query) {
+        $game->increment('visit');
+        $gameInfo = Game::query()->with(['comments' => function ($query) {
             $query->where([['active', 1], ['status', 1]]);
         }, 'likes', 'city'])->find($game->id);
         return view('games.single', compact('gameInfo'));

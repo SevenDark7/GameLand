@@ -36,22 +36,23 @@ class BlogController extends Controller
     {
         $request->validate([
             'title' => ['required', 'min:3'],
-            'platform' => ['required'],
-            'release' => ['required', 'date'],
-            'publisher' => ['required'],
-            'genre' => ['required'],
-            'description' => ['nullable'],
+            'description' => ['required', 'min:10'],
+            'image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif'],
             'meta' => ['nullable'],
         ]);
 
+        if ($request->hasFile('image')) {
+            $uploadedFile = $request->file('image');
+            $fileName = time() . '.' . $uploadedFile->getClientOriginalExtension();
+            $uploadedFile->move(public_path('/blogImages'), $fileName);
+            $request->image = 'blogImages/' . $fileName;
+        }
+
         Blog::create([
             'title' => $request->title,
-            'platform' => $request->platform,
-            'release' => $request->release,
-            'publisher' => $request->publisher,
-            'genre' => $request->genre,
-            'user_id' => Auth::id(),
             'description' => $request->description,
+            'image' => $request->image,
+            'user_id' => Auth::id(),
             'meta' => $request->meta,
         ]);
 
@@ -64,6 +65,8 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
+        $blog->increment('visit');
+
         $blogInfo = Blog::query()->with(['user', 'likes', 'comments' => function($query) {
             $query->where([['status', 1], ['active', 1]]);
         }])->find($blog->id);

@@ -498,7 +498,7 @@ a.card-title:hover {
 }
 
 .wrapper {
-    font-family: Vazir;
+    font-family: Vazir !important;
     line-height: 2.5rem;
 }
 

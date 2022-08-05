@@ -6,19 +6,27 @@
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item d-flex mb-4 pl-5 text-light">
             <i class="material-icons px-3">home</i>
-            <a href="/register" class="text-light">Home</a>
+            <a href="/" class="text-light">Home</a>
         </li>
         <li class="nav-item d-flex mb-4 pl-5 text-light">
             <i class="material-icons px-3">dashboard</i>
-            <a href="/dashboard" class="text-light">Dashboard</a>
+            <a href="/admin/dashboard" class="text-light">Dashboard</a>
         </li>
         <li class="nav-item d-flex mb-4 pl-5 text-light">
             <i class="material-icons px-3">list</i>
-            <a href="/list" class="text-light">Gams</a>
+            <a href="admin/games" class="text-light">Games</a>
+        </li>
+        <li class="nav-item d-flex mb-4 pl-5 text-light">
+            <i class="material-icons px-3">list</i>
+            <a href="/admin/news" class="text-light">News</a>
+        </li>
+        <li class="nav-item d-flex mb-4 pl-5 text-light">
+            <i class="material-icons px-3">list</i>
+            <a href="/admin/blogs" class="text-light">Blog</a>
         </li>
     </ul>
     <hr>
     <div class="dropdown d-flex justify-content-start pl-5 mb-3">
-        <a href="/" class="text-danger px-3">Sign Out</a>
+        <a href="/logout" class="text-danger px-3">Sign Out</a>
     </div>
 </section>

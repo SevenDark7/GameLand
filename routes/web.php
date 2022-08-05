@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogActionController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\GameActionController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InformationController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Game;
@@ -58,43 +60,23 @@ Route::prefix('/games')->group(function () {
 
 
 Route::prefix('admin')->group(function () {
-    Route::get('/', function () {
-        return view('admin.articles.panel');
-    });
+    Route::get('/', [AdminController::class, 'index']);
+    Route::post('/login', [AdminController::class, 'login']);
+    Route::middleware('admin.auth')->group(function () {
+        Route::get('/dashboard', [AdminController::class, 'dashboard']);
+        Route::prefix('/news')->group(function () {
+            Route::post('/', [InformationController::class, 'store']);
+        });
 
-    Route::get('/articles/comments', function () {
-        return view('articles.comments');
-    });
-
-    Route::get('/articles/panel', function () {
-//        $games = Game::all();
-        return view('admin.articles.panel');
-    });
-
-    Route::post('/articles/register', function () {
-        $validator = Validator::make(request()->all(), [
-            'name' => 'required',
-            'release' => 'required',
-            'publish' => 'required',
-            'genre' => 'required'
-        ])->validated();
-        Game::create([
-            'name' => ucwords($validator['name']),
-            'platform' => strtoupper(request('platform')),
-            'release' => $validator['release'],
-            'publisher' => ucwords($validator['publish']),
-            'genre' => ucwords($validator['genre'])
-        ]);
-        return back();
-    });
-
-    Route::post('/articles/update', function () {
-        $validator = Validator::make(request()->all(), [
-            'id' => 'required'
-        ])->validated();
-        $article = Game::findOrFail($validator['id']);
-        return view('admin.articles.panel', [
-            'article' => $article
-        ]);
+        Route::post('/articles/update', function () {
+            $validator = Validator::make(request()->all(), [
+                'id' => 'required'
+            ])->validated();
+            $article = Game::findOrFail($validator['id']);
+            return view('admin.articles.panel', [
+                'article' => $article
+            ]);
+        });
     });
 });
+

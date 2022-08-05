@@ -15,7 +15,7 @@
             </a>
         </div>
         <div class="carousel-item">
-            <a href="#">
+            <a href="/games?order=visit">
                 <img src="/images/Slide2.jpg" alt="Most Visit" width="100%" height="500">
                 <div class="carousel-caption">
                     <h3>بیشترین بازدید</h3>
