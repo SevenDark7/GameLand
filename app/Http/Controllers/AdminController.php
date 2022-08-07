@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\City;
+use App\Models\Game;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -38,6 +39,7 @@ class AdminController extends Controller
     public function dashboard()
     {
         $cities = City::all();
-        return view('admin.articles.panel', compact('cities'));
+        $games = Game::query()->where([['active', 1], ['status', 2]])->get();
+        return view('admin.dashboard', compact('cities', 'games'));
     }
 }

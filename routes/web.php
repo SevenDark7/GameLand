@@ -53,6 +53,8 @@ Route::prefix('/games')->group(function () {
     Route::get('/', [GameController::class, 'index']);
     Route::get('/{game}', [GameController::class, 'show']);
     Route::post('/', [GameController::class, 'store']);
+    Route::put('/{game}', [GameController::class, 'update']);
+    Route::delete('/{game}', [GameController::class, 'destroy']);
     Route::prefix('comment')->group(function () {
         Route::post('/', [GameActionController::class, 'addComment']);
     });
